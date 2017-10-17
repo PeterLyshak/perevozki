@@ -1,0 +1,176 @@
+.promo-block {
+	width: 100%;
+	position: relative;
+	background-color: #ebf6fa;
+	
+	&__wrapper {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	&__title {
+		font-size: 48px;
+		line-height: 1.2;
+		font-weight: 800;
+		color: #000;
+		text-transform: uppercase;
+		
+		margin-bottom: 15px;
+	}
+	
+	&__text {
+		font-size: 18px;
+		line-height: 30px;
+		font-weight: 400;
+		color: #000;
+	}
+	
+	&__left {
+		
+	}
+	
+	&__form {
+		
+		.checkbox-wrapper {
+			margin-top: 15px;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+@media @mobile {
+	.promo-block {
+		&__wrapper {
+			padding-top: 15px;
+			padding-bottom: 25px;
+			
+			padding-left: 15px;
+			padding-right: 15px;
+			
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+		}
+		
+		&__title {
+			font-size: 30px;
+			margin-bottom: 15px;
+		}
+		
+		&__text {
+			font-size: 16px;
+			line-height: 24px;
+		}
+		
+		&__left {
+			width: 100%;
+			margin-bottom: 15px;
+		}
+		
+		&__right {
+			width: 100%;
+		}
+		
+		&__form {
+			
+			.checkbox-wrapper {
+				padding-right: 45px;
+			}
+			
+			.submit-button {
+				width: 100%;
+				max-width: 350px;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
+
+@media @tablet {
+	.promo-block {
+		&__wrapper {
+			padding-top: 30px;
+			padding-bottom: 50px;
+			
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+		
+		&__title {
+			font-size: 35px;
+		}
+		
+		&__text {
+			font-size: 16px;
+			line-height: 24px;
+		}
+		
+		&__left {
+			width: 50%;
+			
+			
+		}
+		
+		&__right {
+			width: 50%;
+			padding-left: 50px;
+		}
+		
+		&__form {
+			
+			.checkbox-wrapper {
+				padding-right: 45px;
+			}
+			
+			.submit-button {
+				width: 100%;
+				max-width: 350px;
+			}
+		}
+	}
+}
+
+
+@media @desktop {
+	.promo-block {
+		
+		
+		&__wrapper {
+			.container();
+			
+			padding-top: 30px;
+			padding-bottom: 50px;
+		}
+		
+		&__left {
+			width: 50%;
+		}
+		
+		&__right {
+			width: 50%;
+			padding-left: 80px;
+		}
+		
+		&__form {
+			
+			.checkbox-wrapper {
+				padding-right: 75px;
+			}
+			
+			.submit-button {
+				width: 350px;
+			}
+		}
+	}
+}
+
+
+
+

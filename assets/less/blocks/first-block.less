@@ -115,6 +115,10 @@
 			font-size: 16px;
 		}
 		
+		.btn {
+			font-weight: 600;
+		}
+		
 		&:before {
 			content: "";
 			display: block;
@@ -159,10 +163,16 @@
 				
 				margin-right: 20px;
 				
+				transition: all 0.2s ease-in;
+				
 				img {
 					max-height: 45px;
 					width: auto;
 					display: block;
+				}
+				
+				&:hover {
+					transform: translateY(-6px);
 				}
 			}
 			
@@ -553,6 +563,8 @@
 				
 				padding-left: 50px;
 				padding-right: 50px;
+				
+				right: -45px;
 			}
 			
 			&__left {
