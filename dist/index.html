@@ -25,7 +25,6 @@
 	<title>Перевозки СПБ - Лендинг 1</title>
 	<!-- CSS -->
 	<link rel="stylesheet" href="css/main.css">
-
 </head>
 <body>
 	
@@ -35,7 +34,7 @@
 				<div class="left-text">Круглосуточная служба перевозок</div>
 				
 				<div class="city-wrap">
-					<i class="icon"><img src="img/icons/location-ico.svg" alt=""></i>
+					<i class="icon-location"></i>
 					
 					<span class="label">Ваш город:</span>
 					
@@ -49,12 +48,12 @@
 			
 			<div class="page-header__bottom">
 				<a href="index.html" class="not-link-mixin main-logo">
-					<img src="img/main-logo.png" alt="Перевозка СПБ РФ">
+					<img src="img/main-logo.svg" alt="Перевозка СПБ РФ">
 				</a>
 				
-				<button class="page-header__menu-toggle" data-toggle="modal" data-target="main-menu"></button>
+				<button class="page-header__menu-toggle" data-toggle="modal" data-target="main-menu"><i class="icon-menu-button"></i></button>
 				
-				<a href="tel:+74951234567" class="white-link bottom-phone"></a>
+				<a href="tel:+74951234567" class="white-link bottom-phone"><i class="icon-phone"></i></a>
 				
 				<nav class="page-header__menu">
 					<ul>
@@ -126,7 +125,7 @@
 					
 					<span>Всего от 399 руб./ч.</span>
 					
-					<span class="not-link-mixin tooltip" title="Подсказка здесь">?</span>
+					<span class="not-link-mixin tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
 				</div>
 				
 				<div class="advantages-item">
@@ -267,7 +266,7 @@
 					<div class="center-text">Залог низких цен, которые <span class="accent">ниже как минимум на 25%,</span> чем у конкурентов</div>
 					
 					<a href="tel:+71234567890" class="phone-link not-link-mixin">
-						<i class="phone-ico"><img src="img/icons/phone-2-ico.png" alt=""></i>
+						<span class="phone-circle"><i class="icon-phone-2"></i></span>
 						<span class="num">+7 (123) 456-78-90</span>
 					</a>
 				</div>
@@ -290,7 +289,7 @@
 					<input type="tel" class="text-input white-input" placeholder="+7 (___) ___ – __ – __" required>
 					
 					<div class="checkbox-wrapper">
-						<input type="checkbox" id="promo-1-check" hidden="hidden">
+						<input type="checkbox" id="promo-1-check" checked hidden="hidden">
 						<label for="promo-1-check">
 							<span class="label-text">Нажимая на кнопку, я принимаю <a href="#" class="not-link-mixin">соглашение на обработку персональных данных</a></span>
 						</label>
@@ -304,13 +303,676 @@
 	
 	<div class="services">
 		<div class="services__wrapper">
+			<div class="services__top">
+				<div class="title">Оказываем полный спектр услуг</div>
+				
+				<div class="text">Мы ценим Ваш комфорт. Работая с нами, Вы получаете любые услуги, связанные в перевозками в одном месте по действительно разумным ценам</div>
+			</div>
+		
+			<div class="services__list">
+				<div class="services__item active">
+					<button class="toggle-btn"><span>Переезды</span></button>
+					
+					<div class="item-content">
+						<div class="services__options-block">
+							<div class="option-item">
+								<div class="checkbox-wrapper">
+									<input type="checkbox" id="kv-opt" hidden="hidden">
+									<label for="kv-opt">
+										<div class="icon"><i class="icon-building"></i></div>
+									
+										<div class="name">Квартирный переезд</div>
+									</label>
+								</div>
+							</div>
+							
+							<div class="option-item">
+								<div class="checkbox-wrapper">
+									<input type="checkbox" id="dacha-opt" hidden="hidden">
+									<label for="dacha-opt">
+										<div class="icon"><i class="icon-house"></i></div>
+									
+										<div class="name">Дачный переезд</div>
+									</label>
+								</div>
+							</div>
+							
+							<div class="option-item">
+								<div class="checkbox-wrapper">
+									<input type="checkbox" id="office-opt" hidden="hidden">
+									<label for="office-opt">
+										<div class="icon"><i class="icon-docs"></i></div>
+									
+										<div class="name">Офисный переезд</div>
+									</label>
+								</div>
+							</div>
+							
+							<div class="option-item">
+								<div class="checkbox-wrapper">
+									<input type="checkbox" id="factory-opt" hidden="hidden">
+									<label for="factory-opt">
+										<div class="icon"><i class="icon-factory"></i></div>
+									
+										<div class="name">Перевозка завода</div>
+									</label>
+								</div>
+							</div>
+							
+							<button type="submit" class="submit-button btn">Отправить заявку</button>
+						</div>
+						
+						<div class="services__photo-block">
+							<img src="img/services/service-1.jpg" alt="">
+						</div>
+					</div>
+				</div>
+				
+				<div class="services__item">
+					<button class="toggle-btn"><span>Перевозки</span></button>
+					
+					<div class="item-content">
+						<div class="services__options-block">
+							<div class="option-item">
+								<div class="checkbox-wrapper">
+									<input type="checkbox" id="mebel-opt" hidden="hidden">
+									<label for="mebel-opt">
+										<div class="icon"><i class="icon-sofa"></i></div>
+									
+										<div class="name">Перевозка любых грузов</div>
+									</label>
+								</div>
+								
+								<ul class="details-options">
+									<li>Перевозка мебели</li>
+									<li>Перевозка дивана</li>
+									<li>Перевозка шкафа</li>
+									<li>Перевозка вещей</li>
+								</ul>
+							</div>
+							
+							<div class="option-item">
+								<div class="checkbox-wrapper">
+									<input type="checkbox" id="piano-opt" hidden="hidden">
+									<label for="piano-opt">
+										<div class="icon"><i class="icon-piano"></i></div>
+									
+										<div class="name">Перевозка пианино / фортепиано / рояля</div>
+									</label>
+								</div>
+							</div>
+							
+							<div class="option-item">
+								<div class="checkbox-wrapper">
+									<input type="checkbox" id="tech-opt" hidden="hidden">
+									<label for="tech-opt">
+										<div class="icon"><i class="icon-wash"></i></div>
+									
+										<div class="name">Перевозка бытовой техники</div>
+									</label>
+								</div>
+								
+								<ul class="details-options">
+									<li>Перевозка холодильника</li>
+									<li>Перевозка стиральной машины</li>
+								</ul>
+							</div>
+							
+							<div class="option-item">
+								<div class="checkbox-wrapper">
+									<input type="checkbox" id="build-opt" hidden="hidden">
+									<label for="build-opt">
+										<div class="icon"><i class="icon-floor"></i></div>
+									
+										<div class="name">Перевозка строительных материалов</div>
+									</label>
+								</div>
+							</div>
+							
+							<div class="option-item">
+								<div class="checkbox-wrapper">
+									<input type="checkbox" id="oboru-opt" hidden="hidden">
+									<label for="oboru-opt">
+										<div class="icon"><i class="icon-build"></i></div>
+									
+										<div class="name">Перевозка оборудования</div>
+									</label>
+								</div>
+							</div>
+							
+							<div class="option-item">
+								<div class="checkbox-wrapper">
+									<input type="checkbox" id="aqua-opt" hidden="hidden">
+									<label for="aqua-opt">
+										<div class="icon"><i class="icon-fish"></i></div>
+									
+										<div class="name">Перевозка аквариума</div>
+									</label>
+								</div>
+							</div>
+							
+							<button class="submit-button btn">Отправить заявку</button>
+						</div>
+						
+						<div class="services__photo-block">
+							<img src="img/services/service-2.jpg" alt="">
+						</div>
+					</div>
+				</div>
+				
+				<div class="services__item">
+					<button class="toggle-btn"><span>Тяжелые грузы</span></button>
+					
+					<div class="item-content">
+						<div class="services__options-block">
+							<div class="option-item">
+								<div class="checkbox-wrapper">
+									<input type="checkbox" id="safe-opt" hidden="hidden">
+									<label for="safe-opt">
+										<div class="icon"><i class="icon-safe"></i></div>
+									
+										<div class="name">Перевозка сейфов</div>
+									</label>
+								</div>
+							</div>
+							
+							<div class="option-item">
+								<div class="checkbox-wrapper">
+									<input type="checkbox" id="atm-opt" hidden="hidden">
+									<label for="atm-opt">
+										<div class="icon"><i class="icon-bank"></i></div>
+									
+										<div class="name">Перевозка банкоматов</div>
+									</label>
+								</div>
+							</div>
+							
+							<button class="submit-button btn">Отправить заявку</button>
+						</div>
+						
+						<div class="services__photo-block">
+							<img src="img/services/service-3.jpg" alt="">
+						</div>
+					</div>
+				</div>
+				
+				<div class="services__item">
+					<button class="toggle-btn"><span>Грузовое такси</span></button>
+					
+					<div class="item-content">
+						<div class="services__options-block">
+							<div class="option-item">
+								<div class="checkbox-wrapper">
+									<input type="checkbox" id="car-opt" hidden="hidden">
+									<label for="car-opt">
+										<div class="icon"><i class="icon-car"></i></div>
+									
+										<div class="name">Заказ машины для перевозки</div>
+									</label>
+								</div>
+								
+								<ul class="details-options">
+									<li>Заказ Газели</li>
+									<li>Заказ Каблучка</li>
+									<li>Заказ Бычка</li>
+								</ul>
+							</div>
+							
+							<button class="submit-button btn">Отправить заявку</button>
+						</div>
+						
+						<div class="services__photo-block">
+							<img src="img/services/service-4.jpg" alt="">
+						</div>
+					</div>
+				</div>
+				
+				<div class="services__item">
+					<button class="toggle-btn"><span>В другой город</span></button>
+					
+					<div class="item-content">
+						<div class="services__options-block">
+							<div class="option-item">
+								<div class="checkbox-wrapper">
+									<input type="checkbox" id="intercity-opt" hidden="hidden">
+									<label for="intercity-opt">
+										<div class="icon"><i class="icon-earth"></i></div>
+									
+										<div class="name">Грузоперевозки межгород</div>
+									</label>
+								</div>
+								
+								<ul class="details-options">
+									<li>Грузоперевозки Санкт-Петербург - Москва</li>
+									<li>Грузоперевозки Санкт-Петербург - Краснодар</li>
+									<li>Грузоперевозки Санкт-Петербург - Череповец</li>
+									<li>Грузоперевозки Санкт-Петербург - Петрозаводск</li>
+								</ul>
+							</div>
+							
+							<div class="option-item">
+								<div class="checkbox-wrapper">
+									<input type="checkbox" id="city-opt" hidden="hidden">
+									<label for="city-opt">
+										<div class="icon"><i class="icon-map-pointer"></i></div>
+									
+										<div class="name">Перевозка вещей в другой город</div>
+									</label>
+								</div>
+							</div>
+							
+							<button class="submit-button btn">Отправить заявку</button>
+						</div>
+						
+						<div class="services__photo-block">
+							<img src="img/services/service-5.jpg" alt="">
+						</div>
+					</div>
+				</div>
+				
+				<div class="services__item">
+					<button class="toggle-btn"><span>Ещё</span></button>
+					
+					<div class="item-content">
+						<div class="services__options-block">
+							<div class="option-item">
+								<div class="checkbox-wrapper">
+									<input type="checkbox" id="curiers-opt" hidden="hidden">
+									<label for="curiers-opt">
+										<div class="icon"><i class="icon-curier"></i></div>
+									
+										<div class="name">Грузчики</div>
+									</label>
+								</div>
+							</div>
+							
+							<div class="option-item">
+								<div class="checkbox-wrapper">
+									<input type="checkbox" id="mebel-build-opt" hidden="hidden">
+									<label for="mebel-build-opt">
+										<div class="icon"><i class="icon-warderobe"></i></div>
+									
+										<div class="name">Сборка-разборка мебели</div>
+									</label>
+								</div>
+							</div>
+							
+							<div class="option-item">
+								<div class="checkbox-wrapper">
+									<input type="checkbox" id="ch-mebel-opt" hidden="hidden">
+									<label for="ch-mebel-opt">
+										<div class="icon"><i class="icon-bed"></i></div>
+									
+										<div class="name">Перестановка мебели</div>
+									</label>
+								</div>
+							</div>
+							
+							<button class="submit-button btn">Отправить заявку</button>
+						</div>
+						
+						<div class="services__photo-block">
+							<img src="img/services/service-6.jpg" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="problems">
+		<div class="problems__wrapper">
+			<div class="problems__top">
+				<div class="title">Почему с <span class="accent"><span id="problems-count">1.23</span>% клиентов</span> не сложились отношения в <span class="accent">августе</span></div>
+				
+				<div class="text">У всех бывают плюсы и минусы. Честно рассказываем, что произошло в прошлом месяце. Стремимся к тому, чтобы оказывать лучший сервис в городе.  Мы уверены, что наше сотрудничество с Вами будет позитивным и выгодным для Вас.</div>
+			</div>
 			
+			<div class="problems__list">
+				
+				<div class="problems__item">
+					<div class="number">1</div>
+					
+					<div class="name">Опоздание в пределах получаса</div>
+					
+					<div class="descr">Санкт-Петербург - огромный город. Опоздания, к сожалению, иногда случаются. Бывают и форс-мажоры.</div>
+				</div>
+				
+				<div class="problems__item">
+					<div class="number">2</div>
+					
+					<div class="name">Упаковочные материалы оказались не того цвета</div>
+					
+					<div class="descr">Бывает и такие чудеса, когда отказы случаются из-за цвета упаковочных материалов.</div>
+				</div>
+				
+				<div class="problems__center-img"><img src="img/problems-img.png" alt=""></div>
+				
+				<div class="problems__item">
+					<div class="number">3</div>
+					
+					<div class="name">Подан не тот автомобиль</div>
+					
+					<div class="descr">Редко, но случается, что вместо одной модели машины подается другая. При этом грузоподъемность и объем кузова не меньше согласованного с клинетом (доплат в случае подачи бОльшего фургона мы не берем). Тем не менее почему-то небольшая часть клиентов относится к этому с непониманием. Хотя мы терпеливо объясняем, что данное обстоятельство на качестве перевозки никак не сказывается.</div>
+				</div>
+				
+				<div class="problems__item">
+					<div class="number">4</div>
+					
+					<div class="name">Клиент пропал и перестал брать трубку</div>
+					
+					<div class="descr">Иногда причины отказов бывают без уточнения со стороны клиента. Просто человек перестает брать трубку и пропадает. Пожалуйста, предупреждайте, заранее в случае изменения Ваших планов. Это сэкономит нам время.</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="calculation">
+		<div class="calculation__wrapper">
+			<h2 class="text-uppercase"><span class="accent">Посчитайте</span> на калькуляторе <span class="accent">стоимость перевозки</span></h2>
+			
+			<form class="calculation__form">
+				<div class="calculation__form-block route-block">
+					<label class="calculation__label m-b">Маршрут:</label>
+					
+					<div class="row">
+						<input tabindex="1" type="text" class="text-input" id="route-from" placeholder="Откуда">
+						
+						<button type="button" data-swipe-route class="change-button"><i class="icon-change"></i></button>
+						
+						<input tabindex="2" type="text" class="text-input" id="route-to" placeholder="Куда">
+					</div>
+				</div>
+				
+				<div class="calculation__map-block">
+					<div class="map" id="calculation-map"></div>
+				</div>
+				
+				<div class="calculation__form-block rent-time">
+					<label class="calculation__label">Время аренды:</label>
+					
+					<div class="select-wrapper">
+						<select id="select-rent-time" class="nice-select">
+							<option value="30min">30 минут</option>
+							<option value="1h">1 час</option>
+							<option value="2h">2 часа</option>
+							<option value="3h">3 часа</option>
+							<option value="4h">4 часа</option>
+							<option value="5h">5 часов</option>
+							<option value="+5h">+ 5 часов</option>
+						</select>
+					</div>
+				</div>
+				
+				<div class="calculation__form-block calculation__transport-sel">
+					<label class="calculation__label">
+						Выберите транспорт:
+						<span class="tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
+					</label>
+					
+					<div class="transport-sel-block">
+						<div class="transport-sel-top">
+							<div class="label">Грузоподъемность</div>
+							
+							<div class="transport-sel-tabs">
+								<button type="button" class="tab active">1 т</button>
+								<button type="button" class="tab">1,5 т</button>
+								<button type="button" class="tab">3 т</button>
+								<button type="button" class="tab">5 т</button>
+								<button type="button" class="tab">10 т</button>
+							</div>
+						</div>
+						
+						<div class="transport-sel-items-wrapper">
+							<div class="main-item active" id="1-tonna">
+								<div class="transport-sel-slider">
+									<div class="item">
+										<div class="inner">
+											<div class="left">
+												<div class="name">
+													<span>ГАЗ 2310 фургон</span>
+													
+													<span class="tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
+												</div>
+												
+												<div class="img-wrapper">
+													<img src="img/vehicles/gaz.png" alt="">
+												</div>
+											</div>
+											
+											<div class="right">
+												<div class="top-label">Габариты кузова:</div>
+												
+												<ul>
+													<li>
+														<span>Длина</span>
+														<span>3 м</span>
+													</li>
+													
+													<li>
+														<span>Высота</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Ширина</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Объем кузова</span>
+														<span>12 куб. м</span>
+													</li>
+													
+													<li>
+														<span>Грузоподъемность</span>
+														<span>1.5 т</span>
+													</li>
+												</ul>
+												
+												<div class="price">Цена:  500 р./час</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="item">
+										<div class="inner">
+											<div class="left">
+												<div class="name">
+													<span>Citreon Berlingo</span>
+													
+													<span class="tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
+												</div>
+												
+												<div class="img-wrapper">
+													<img src="img/vehicles/berlingo.png" alt="">
+												</div>
+											</div>
+											
+											<div class="right">
+												<div class="top-label">Габариты кузова:</div>
+												
+												<ul>
+													<li>
+														<span>Длина</span>
+														<span>3 м</span>
+													</li>
+													
+													<li>
+														<span>Высота</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Ширина</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Объем кузова</span>
+														<span>11 куб. м</span>
+													</li>
+													
+													<li>
+														<span>Грузоподъемность</span>
+														<span>1 т</span>
+													</li>
+												</ul>
+												
+												<div class="price">Цена:  500 р./час</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
 		</div>
 	</div>
 	
 	<script src="js/jquery-3.2.1.js"></script>
 	<script src="js/plugins.min.js"></script>
 	<script src="js/scripts.min.js"></script>
+	
+	<script src="https://api-maps.yandex.ru/2.1/?load=package.full&lang=ru-RU" type="text/javascript"></script>
+	
+	<script>
+		ymaps.ready(init);
+		var calculationMap;
 
+		function init() {    
+			var inpuFrom = document.getElementById('route-from');
+			var inputTo = document.getElementById('route-to');
+			
+			var suggestViewFrom = new ymaps.SuggestView('route-from', {
+				width: '300',
+				boundedBy : [ // Координаты СПБ
+					[ // Нижняя-левая
+						59.60220038, 
+						29.80020656
+					],
+					[ // Верхняя-правая
+						60.20253362, 
+						30.92698480
+					]   
+				]
+			}),
+				suggestViewTo = new ymaps.SuggestView('route-to', {
+				width: '300',
+				boundedBy : [ // Координаты СПБ
+					[ // Нижняя-левая
+						59.60220038, 
+						29.80020656
+					],
+					[ // Верхняя-правая
+						60.20253362, 
+						30.92698480
+					]   
+				]
+			});
+			
+			calculationMap = new ymaps.Map ("calculation-map", {
+				center: [55.76, 37.64],
+				zoom: 7
+			}, {
+				searchControlNoCentering: true,
+			});
+			
+			suggestViewFrom.events.add('select', function () {
+				var activeIndex = suggestViewFrom.state.get('activeIndex');
+				
+				if (typeof activeIndex == 'number') {
+						activeItem = suggestViewFrom.state.get('items')[activeIndex];
+					if (activeItem && activeItem.value != inpuFrom.value) {
+						inpuFrom.value = activeItem.value;
+					}
+				}
+				
+				setRoute();
+			});
+			
+			suggestViewTo.events.add('select', function () {
+				var activeIndex = suggestViewTo.state.get('activeIndex');
+				
+				if (typeof activeIndex == 'number') {
+						activeItem = suggestViewTo.state.get('items')[activeIndex];
+					if (activeItem && activeItem.value != inputTo.value) {
+						inputTo.value = activeItem.value;
+					}
+				}
+				
+				setRoute();
+			});
+			
+			function setRoute() {
+				var fromValue = $('#route-from').val();
+				var toValue = $('#route-to').val();
+
+				console.log('piu');
+				
+				if (toValue === '' || fromValue === '') {
+					suggestViewFrom.state.set({
+						open: false,
+						panelClosed: true,
+						items: []
+					});
+
+					suggestViewTo.state.set({
+						open: false,
+						panelClosed: true,
+						items: []
+					});
+					
+				} else {
+					
+					ymaps.route([
+						fromValue,
+						toValue
+					],{ 
+						mapStateAutoApply: true
+
+					}).then(
+						function (route) {
+							calculationMap.geoObjects.removeAll();
+							calculationMap.geoObjects.add(route);
+						},
+						function (error) {
+							console.log("Возникла ошибка: " + error.message);
+						}
+					);
+					
+					
+				}
+			}
+			
+			$('[data-swipe-route]').click(function(e) {
+				e.preventDefault();
+
+				var fromInputVal = $(this).siblings('#route-from').val();
+				var toInputVal = $(this).siblings('#route-to').val();
+
+				$('#route-from').val(toInputVal);
+				$('#route-to').val(fromInputVal);
+				
+				suggestViewFrom.state.set({
+					open: false,
+					panelClosed: true,
+					items: []
+				});
+
+				suggestViewTo.state.set({
+					open: false,
+					panelClosed: true,
+					items: []
+				});
+				
+				setRoute();
+			});
+		}
+		
+		
+	</script>
 </body>
 </html>

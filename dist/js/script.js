@@ -51,6 +51,17 @@ $('#reliably').waypoint(function() {
 
 $("[type = tel]").mask("+7 (999) 999 – 99 – 99");
 
+$('.services__item .toggle-btn').click(function(e) {
+	e.preventDefault();
+	
+	$(this).parent().addClass('active').siblings().removeClass('active');
+});
 
+$('#problems-count').countUp({
+	'time': 2000,
+	'delay': 10
+});
+
+$('.nice-select').niceSelect();
 
 

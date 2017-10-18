@@ -23,6 +23,10 @@ h2 {
 		text-transform: uppercase;
 	}
 	
+	&.text-uppercase {
+		text-transform: uppercase;
+	}
+	
 	&.text-left {
 		text-align: left;
 	}
@@ -137,6 +141,7 @@ a:not(.white-link):not(.not-link-mixin):not(.btn) {
 	border-radius: 42.5px;
 	color: #fefeff;
 
+	font-family: 'ProximaNova';
 	font-size: 24px;
 	font-weight: 400;
 	
@@ -323,16 +328,17 @@ a:not(.white-link):not(.not-link-mixin):not(.btn) {
 			content: "";
 			display: block;
 			
-			width: 14px;
-			height: 13px;
+			width: 28px;
+			height: 28px;
 			
 			background-repeat: no-repeat;
-			background-size: 100% 100%;
-			background-image: url("../img/icons/checkbox-ico.png");
+			background-size: 14px 13px;
+			background-position: center center;
+			background-image: url("../img/icons/checkbox-ico.svg");
 			
 			position: absolute;
-			top: 9px;
-			left: 8px;
+			top: 0;
+			left: 0;
 			
 			opacity: 0;
 		}
