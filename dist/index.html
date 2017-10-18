@@ -91,6 +91,10 @@
 	</header>
 	
 	<div class="first-block">
+		<div class="overlay" style="height: 100%;width: 100%;position: absolute;top: 0px;left: 0px;z-index: 2;background: rgba(24, 28, 32, .85); opacity: 0.9;"></div>
+		<video autoplay muted style="width: 1440px;position: fixed;" poster="./img/first-block-bg.jpg" id="bgr_video">
+			<source src="https://videos.pond5.com/delivery-man-loads-cardboard-boxes-footage-069720630_main_xl.mp4" type="video/mp4">
+        </video>
 		<div class="first-block__wrapper">
 			<div class="first-block__left">
 				<div class="top">Быстро поможем перевезти любой груз: подача от 30 мин.</div>
@@ -970,8 +974,26 @@
 				
 				setRoute();
 			});
+
 		}
-		
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			var myvid = document.getElementById('bgr_video');
+			var myvids = [
+				"https://videos.pond5.com/delivery-man-loads-cardboard-boxes-footage-069720630_main_xl.mp4",
+				"https://videos.pond5.com/delivery-man-loads-his-commercial-footage-069720084_main_xl.mp4",
+				"https://videos.pond5.com/young-mover-unloads-his-cargo-footage-069720805_main_xl.mp4"
+			  ];
+			var activeVideo = 0;
+			myvid.addEventListener('ended', function(e) {
+			  // update the new active video index
+			  activeVideo = (++activeVideo) % myvids.length;
+
+			  // update the video source and play
+			  myvid.src = myvids[activeVideo];
+			  myvid.play();
+			});
+		});
 		
 	</script>
 </body>
