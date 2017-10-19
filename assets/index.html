@@ -38,12 +38,12 @@
 					
 					<span class="label">Ваш город:</span>
 					
-					<a href="javascript:;" class="main-link" data-target="#city-modal" data-toggle="modal">Санкт-Петербург</a>
+					<a href="javascript:;" class="brand-link main-link" data-target="#city-modal" data-toggle="modal">Санкт-Петербург</a>
 				</div>	
 				
 				<a href="tel:+74951234567" class="white-link top-phone">+7 (495) 123-45-67</a>
 				
-				<a href="javascript:;" class="main-link callback-btn" data-toggle="modal" data-target="#callback-modal">Перезвоните мне</a>
+				<a href="javascript:;" class="brand-link main-link callback-btn" data-toggle="modal" data-target="#callback-modal">Перезвоните мне</a>
 			</div>
 			
 			<div class="page-header__bottom">
@@ -115,7 +115,7 @@
 				
 				<div class="bottom-info">
 					<span>Не верите?</span>
-					<a class="main-link" href="javascript:;">Проверьте</a>
+					<a class="brand-link main-link" href="javascript:;">Проверьте</a>
 				</div>
 			</div>
 			
@@ -671,7 +671,7 @@
 		<div class="calculation__wrapper">
 			<h2 class="text-uppercase"><span class="accent">Посчитайте</span> на калькуляторе <span class="accent">стоимость перевозки</span></h2>
 			
-			<form class="calculation__form">
+			<div class="calculation__form">
 				<div class="calculation__form-block route-block">
 					<label class="calculation__label m-b">Маршрут:</label>
 					
@@ -705,7 +705,7 @@
 				</div>
 				
 				<div class="calculation__form-block calculation__transport-sel">
-					<label class="calculation__label">
+					<label class="calculation__label m-b">
 						Выберите транспорт:
 						<span class="tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
 					</label>
@@ -828,7 +828,380 @@
 						</div>
 					</div>
 				</div>
-			</form>
+				
+				<div class="calculation__form-block curiers-quant">
+					<label class="calculation__label m-b">
+						Укажите кол-во грузчиков:
+						<span class="tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
+					</label>
+					
+					<div class="select-wrapper">
+						<select id="select-curiers-quant" class="nice-select">
+							<option value="0">Буду носить сам</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+						</select>
+					</div>
+				</div>
+				
+				<a href="javascript:;" data-toggle="modal" data-target="#" class="brand-link calculation__time-popup-toggle">Время подачи</a>
+				
+				<button data-toggle="modal" data-target="#" class="btn submit-button">Рассчитать</button>
+			</div>
+		</div>
+	</div>
+	
+	<div class="faq">
+		<div class="faq__wrapper">
+			<div class="faq__title">
+				<div class="small">Важно знать.</div>
+				<div class="big">Ответы на популярные вопросы</div>
+			</div>
+			
+			<div class="faq__row">
+				<div class="faq__left">
+					<img src="img/faq-img.jpg" alt="">
+					
+					<div class="img-caption">Ольга, наш диспетчер</div>
+				</div>
+				
+				<div class="faq__right">
+					<div class="faq__item">
+						<a href="javascript:;" data-toggle="slide-message" class="toggle">Как вы гарантируете сохранность имущества?</a>
+						
+						<div class="slide-message">
+							Ответственность компании за сохранность имущества заказчика закреплена в договоре. Также у нас есть собственная служба контроля качества, которая следит за качеством выполнения услуг, исключая малейшие нарушения стандартов исполнителями. Каждый член команды понимает ответственность и занитересован в сохранности всех вещей даже больше самого клиента.
+						</div>
+					</div>
+					
+					<div class="faq__item">
+						<a href="javascript:;" data-toggle="slide-message" class="toggle">Вы упаковываете вещи перед транспортировкой?</a>
+						
+						<div class="slide-message">
+							Да. Наши специалисты разберут упакают мебель, технику и другие предметы для избежания любых повреждений.
+						</div>
+					</div>
+					
+					<div class="faq__item">
+						<a href="javascript:;" data-toggle="slide-message" class="toggle">Можно ли заказать услуги грузчиков?</a>
+						
+						<div class="slide-message">
+							Да. Заказать услуги можно вместе с перевозкой либо отдельно. Стоимость зависит от количества затраченного времени, типа вещей и этажности. Наши специалисты помогут профессионально разобрать мебель, произвести ее упаковку, погрузить и разгрузить из автомобиля, поднять на этаж и произвести сборку и расстановку на месте.
+						</div>
+					</div>
+					
+					<div class="faq__item">
+						<a href="javascript:;" data-toggle="slide-message" class="toggle">Какие документы нужны для перевозки груза в пределах страны?</a>
+						
+						<div class="slide-message">
+							Для транспортировки груза внутри страны могут понадобиться следующие документы:
+							
+							<ul>
+								<li>Товарно-транспортная накладная (ТТН).</li>
+								<li>Доверенность на водителя при отсутствии ТТН.</li>
+								<li>Заявка на заказ с подписью клиента.</li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="faq__item">
+						<a href="javascript:;" data-toggle="slide-message" class="toggle">Можно ли заказать перевозку в другой город?</a>
+						
+						<div class="slide-message">
+							Да, наиболее популярным направлением междугородных перевозок является Москва. Наши клиенты часто заказывают перевозки в столицу.
+						</div>
+					</div>
+					
+					<div class="faq__item">
+						<a href="javascript:;" data-toggle="slide-message" class="toggle">Грузы какого размера перевозит Ваша компания?</a>
+						
+						<div class="slide-message">
+							В автопарке компании имеются автомобили разной вместимости – от 8 до 80 м<sup>3</sup>. Также, мы готовы предоставить открытый борт на 33 паллеты, позволяющий перевозить груз, выступающий за границы кузова.
+						</div>
+					</div>
+					
+					<div class="faq__item">
+						<a href="javascript:;" data-toggle="slide-message" class="toggle">Грузы какого типа не перевозит Ваша компания?</a>
+						
+						<div class="slide-message">
+							Живые грузы за исключением кошек и собак.<br>Опасные и запрещённые грузы
+						</div>
+					</div>
+					
+					<div class="faq__item">
+						<a href="javascript:;" data-toggle="slide-message" class="toggle">Возможно ли заключение долгосрочного договора для юридических лиц?</a>
+						
+						<div class="slide-message">
+							Да. Наша компания открыта для постоянного сотрудничества и предоставляет постоянным клиентам скидки до 30%. Нашими услугами уже пользуются многие кнупные интернет-магазины Санкт-Петербурга.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="promotions">
+		<div class="promotions__top">
+			<div class="promotions__counter">
+				<span class="current" id="promotions-current-number">1</span>
+				<span class="small">/ 7</span>
+			</div>
+		
+			<div class="inner">
+				<h2 class="promotions__title">Найдите акцию для себя</h2>
+				
+				<div class="promotions__slider-controls">
+					<a href="javascript:;" class="promotions__arrow prev"><i class="icon-long-arrow"></i></a>
+					
+					<div class="promotions__dots" id="promotions-dots">
+						
+					</div>
+					
+					<a href="javascript:;" class="promotions__arrow next"><i class="icon-long-arrow"></i></a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="promotions__slider" id="promotions-slider">
+			<div class="promotions__item">
+				<img data-lazy="img/promotions/promo-1.jpg" class="background-img" alt="">
+				<div class="inner promotions__wrapper">
+					<div class="heading">Вечером дешевле</div>
+					
+					<div class="row-text">
+						<div class="text">Перевозка вечером не только быстрее, но и намного выгодней!</div>
+						
+						<div class="text">Сделаем скидку 10% при переезде с 21:00 по 03:00</div>
+					</div>
+					
+					<button data-toggle="modal" data-target="#" class="btn promotions__button-modal">Воспользоваться</button>
+				</div>
+			</div>
+			
+			<div class="promotions__item">
+				<img data-lazy="img/promotions/promo-2.jpg" class="background-img" alt="">
+				<div class="inner promotions__wrapper">
+					<div class="heading">Скидки 10% для именниников</div>
+					
+					<div class="row-text">
+						<div class="text">Снизим стоимость на 10% для всех именников</div>
+					</div>
+					
+					<button data-toggle="modal" data-target="#" class="btn promotions__button-modal">Воспользоваться</button>
+				</div>
+			</div>
+			
+			<div class="promotions__item">
+				<img data-lazy="img/promotions/promo-3.jpg" class="background-img" alt="">
+				<div class="inner promotions__wrapper">
+					<div class="heading">СПБ < - > Москва</div>
+					
+					<div class="text">Доставим всё из Петербурга в Москву или из Москвы в Петербург за 22 999 руб.<br>В акции участвует «Газель» (длиной 3 м, ширина 1,95 м, высота 2 м).<br>Объём — 12 м3, грузоподъёмность — 1,5 т.</div>
+					
+					
+					<button data-toggle="modal" data-target="#" class="btn promotions__button-modal">Воспользоваться</button>
+				</div>
+			</div>
+			
+			<div class="promotions__item">
+				<img data-lazy="img/promotions/promo-4.jpg" class="background-img" alt="">
+				<div class="inner promotions__wrapper">
+					<div class="heading">Большой офис</div>
+					
+					<div class="text">Скидка 10% на все работы при заказке перевозки офиса на 50 или более рабочих мест</div>
+					
+					
+					<button data-toggle="modal" data-target="#" class="btn promotions__button-modal">Воспользоваться</button>
+				</div>
+			</div>
+			
+			<div class="promotions__item">
+				<img data-lazy="img/promotions/promo-5.jpg" class="background-img" alt="">
+				<div class="inner promotions__wrapper">
+					<div class="heading">Скидка новоселам 10%</div>
+					
+					<div class="text">Если Вы купили квартиру не более года назад, мы дарим скидку 10%.
+					<div class="small">* Важно предъявить копию договора купли-продажи или свидетельство о праве собственности.</div>
+					</div>
+					
+					
+					<button data-toggle="modal" data-target="#" class="btn promotions__button-modal">Воспользоваться</button>
+				</div>
+			</div>
+			
+			<div class="promotions__item">
+				<img data-lazy="img/promotions/promo-6.jpg" class="background-img" alt="">
+				<div class="inner promotions__wrapper">
+					<div class="heading">Дачный сезон - скидка 10%</div>
+					
+					<div class="text">Если Вы купили квартиру не более года назад, мы дарим скидку 10%.<br><b>В мае и сентябре действует скидка 10% при перевозке с дачи.</b></div>
+					
+					<button data-toggle="modal" data-target="#" class="btn promotions__button-modal">Воспользоваться</button>
+				</div>
+			</div>
+			
+			<div class="promotions__item">
+				<img data-lazy="img/promotions/promo-7.jpg" class="background-img" alt="">
+				<div class="inner promotions__wrapper">
+					<div class="heading">Скидка 10% для пенсионеров и инвалидов</div>
+					
+					<div class="text">Скидка действует каждый день в любое время суток на всю стоимость заказа.</div>
+					
+					<button data-toggle="modal" data-target="#" class="btn promotions__button-modal">Воспользоваться</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="reviews">
+		<div class="reviews__wrapper">
+			<h2 class="text-uppercase">Посмотрите эти видео и узнайте <span class="accent">за что нас любят клиенты</span></h2>
+			
+			<div class="reviews__slider" id="reviews-slider">
+				<div class="reviews__item">
+					<div data-youtube-id="KFH046IYwb4" class="block-video">
+						<div class="thumb-block">
+							<img data-lazy="https://img.youtube.com/vi/KFH046IYwb4/maxresdefault.jpg" class="placeholder-thumb" alt="">
+						</div>
+					</div>
+					
+					<div class="review-content">
+						<div class="name">Иванов Иван Иванович</div>
+						
+						<div class="review-rating">
+							<div class="label">Оценка:</div>
+							
+							<div class="rating-row">
+								<div class="rating-block" data-rateyo-rating="5"></div>
+								
+								<div class="rating-caption">Доволен услугой</div>
+							</div>
+						</div>
+						
+						<div class="review-text">
+							<a href="img/review-photo.jpg" data-fancybox class="left-img">
+								<img src="img/review-photo.jpg" alt="">
+							</a>
+							
+							<div class="inner-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="reviews__item">
+					<div data-youtube-id="KFH046IYwb4" class="block-video">
+						<div class="thumb-block">
+							<img data-lazy="https://img.youtube.com/vi/KFH046IYwb4/maxresdefault.jpg" class="placeholder-thumb" alt="">
+						</div>
+					</div>
+					
+					<div class="review-content">
+						<div class="name">Иванов Иван Иванович</div>
+						
+						<div class="review-rating">
+							<div class="label">Оценка:</div>
+							
+							<div class="rating-row">
+								<div class="rating-block" data-rateyo-rating="5"></div>
+								
+								<div class="rating-caption">Доволен услугой</div>
+							</div>
+						</div>
+						
+						<div class="review-text">
+							<a href="img/review-photo.jpg" data-fancybox class="left-img">
+								<img src="img/review-photo.jpg" alt="">
+							</a>
+							
+							<div class="inner-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="reviews__item">
+					<div data-youtube-id="KFH046IYwb4" class="block-video">
+						<div class="thumb-block">
+							<img data-lazy="https://img.youtube.com/vi/KFH046IYwb4/maxresdefault.jpg" class="placeholder-thumb" alt="">
+						</div>
+					</div>
+					
+					<div class="review-content">
+						<div class="name">Иванов Иван Иванович</div>
+						
+						<div class="review-rating">
+							<div class="label">Оценка:</div>
+							
+							<div class="rating-row">
+								<div class="rating-block" data-rateyo-rating="5"></div>
+								
+								<div class="rating-caption">Доволен услугой</div>
+							</div>
+						</div>
+						
+						<div class="review-text">
+							<a href="img/review-photo.jpg" data-fancybox class="left-img">
+								<img src="img/review-photo.jpg" alt="">
+							</a>
+							
+							<div class="inner-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="reviews__item">
+					<div data-youtube-id="KFH046IYwb4" class="block-video">
+						<div class="thumb-block">
+							<img data-lazy="https://img.youtube.com/vi/KFH046IYwb4/maxresdefault.jpg" class="placeholder-thumb" alt="">
+						</div>
+					</div>
+					
+					<div class="review-content">
+						<div class="name">Иванов Иван Иванович</div>
+						
+						<div class="review-rating">
+							<div class="label">Оценка:</div>
+							
+							<div class="rating-row">
+								<div class="rating-block" data-rateyo-rating="5"></div>
+								
+								<div class="rating-caption">Доволен услугой</div>
+							</div>
+						</div>
+						
+						<div class="review-text">
+							<a href="img/review-photo.jpg" data-fancybox class="left-img">
+								<img src="img/review-photo.jpg" alt="">
+							</a>
+							
+							<div class="inner-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="reviews__slider-controls">
+				<a href="javascript:;" class="reviews__arrow prev">
+					<i class="icon-long-arrow"></i>
+					<span class="arrow-text">Предыдущие отзывы</span>
+				</a>
+
+				<div class="reviews__dots" id="reviews-dots">
+
+				</div>
+
+				<a href="javascript:;" class="reviews__arrow next">
+					<span class="arrow-text">Следующие отзывы</span>
+					<i class="icon-long-arrow"></i>
+				</a>
+			</div>
 		</div>
 	</div>
 	
@@ -846,32 +1219,34 @@
 			var inpuFrom = document.getElementById('route-from');
 			var inputTo = document.getElementById('route-to');
 			
+			
 			var suggestViewFrom = new ymaps.SuggestView('route-from', {
-				width: '300',
-				boundedBy : [ // Координаты СПБ
-					[ // Нижняя-левая
-						59.60220038, 
-						29.80020656
-					],
-					[ // Верхняя-правая
-						60.20253362, 
-						30.92698480
-					]   
-				]
-			}),
+					width: '300',
+					boundedBy : [ // Координаты СПБ
+						[ // Нижняя-левая
+							59.60220038, 
+							29.80020656
+						],
+						[ // Верхняя-правая
+							60.20253362, 
+							30.92698480
+						]   
+					]
+				}),
 				suggestViewTo = new ymaps.SuggestView('route-to', {
-				width: '300',
-				boundedBy : [ // Координаты СПБ
-					[ // Нижняя-левая
-						59.60220038, 
-						29.80020656
-					],
-					[ // Верхняя-правая
-						60.20253362, 
-						30.92698480
-					]   
-				]
-			});
+					width: '300',
+					boundedBy : [ // Координаты СПБ
+						[ // Нижняя-левая
+							59.60220038, 
+							29.80020656
+						],
+						[ // Верхняя-правая
+							60.20253362, 
+							30.92698480
+						]   
+					]
+				});
+
 			
 			calculationMap = new ymaps.Map ("calculation-map", {
 				center: [55.76, 37.64],
