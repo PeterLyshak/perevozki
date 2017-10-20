@@ -90,7 +90,6 @@ $('.advantages__item').hover(function() {
 	
 	$('#' + thisTarget).addClass('active');
 	
-	console.log('hoverd');
 }, function() {
 	var thisTarget = $(this).attr('data-target');
 	
