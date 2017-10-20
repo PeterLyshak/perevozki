@@ -1,0 +1,747 @@
+.tariffs {
+	width: 100%;
+	background-color: #fff;
+	position: relative;
+	
+	&__top {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		
+		h2 {
+			width: auto;
+			margin: 0;
+		}
+		
+		.text {
+			color: #000;
+			font-size: 16px;
+			line-height: 24px;
+			font-weight: 400;
+			text-align: right;
+		}
+	}
+	
+	&__block {
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+		
+	}
+	
+	&__right {
+		position: relative;
+		background-color: @brand-color;
+		
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0; 
+			
+			padding-top: 30px;
+			margin-bottom: 30px;
+			
+			li {
+				display: -webkit-flex;
+				display: -moz-flex;
+				display: -ms-flex;
+				display: -o-flex;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: flex-end;
+				color: #000;
+				
+				background-repeat: repeat-x;
+				background-size: 3px 1px;
+				background-position: left bottom 7px;
+				background-image: linear-gradient(to right, #000 50%, rgba(0,0,0,0.001) 50%);
+				
+				&:not(:last-child) {
+					margin-bottom: 25px;
+				}
+
+				span {
+					background-color: #f3f3f3;
+				}
+
+				span:first-child {
+					padding-right: 5px;
+					text-transform: uppercase;
+					font-weight: 400;
+					font-size: 14px;
+				}
+
+				span:last-child {
+					text-align: right;
+					font-weight: 700;
+					font-size: 16px;
+
+					padding-left: 5px;
+				}
+			}
+		}
+		
+		.phone-link {
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: center;
+			
+			
+			font-size: 25px;
+			font-weight: 700;
+			text-decoration: none !important;
+			color: @text-dark-gray;
+			
+			.phone-circle {
+				display: inline-block;
+				flex-shrink: 0;
+				margin-right: 13px;
+				width: 40px;
+				height: 40px;
+				background-color: @brand-color;
+				border-radius: 50%;
+				
+				font-size: 21px;
+				color: #fff;
+				line-height: 40px;
+				text-align: center;
+				
+				padding-top: 3px;
+			}
+		}
+	}
+	
+	
+	
+	&__item {
+		position: absolute;
+		top: 0;
+		left: 0;
+		
+		width: 100%;
+		height: auto;
+		
+		
+		&:not(.active) {
+			pointer-events: none;
+			opacity: 0;
+		}
+	}
+	
+	&__close-btn {
+		pointer-events: none;
+		font-size: 72px;
+		font-weight: 100;
+		color: #000;
+		display: block;
+		
+		width: 40px;
+		height: 40px;
+		text-align: center;
+		line-height: 40px;
+		user-select: none;
+		
+		text-decoration: none !important;
+		transform: rotate(45deg);
+		
+		position: absolute;
+		top: 25px;
+		right: 25px;
+		
+		&:hover {
+			opaciy: 0.8;
+		}
+	}
+	
+	&__left {
+		position: relative;
+		background-color: #f3f3f3;
+		
+		.tabs-wrap {
+			position: relative;
+			z-index: 4;
+			
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+		}
+		
+		.opened-bg {
+			display: block;
+			
+			position: absolute;
+			z-index: 1;
+			
+			bottom: 0;
+			left: 0;
+			opacity: 0;
+			transition: all 0.2s ease-in;
+			
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			
+			&.vehicle-bg {
+				background-image: url("../img/tariffs-vehicle.png");
+			}
+			
+			&.curiers-bg {
+				background-image: url("../img/advantages/man-img-mobile.png");
+			}
+		}
+	}
+	
+	&__tab {
+		display: inline-block;
+		position: relative;
+		outline: none !important;
+		text-decoration: none;
+		font-size: 24px;
+
+		color: #000;
+
+		font-weight: 700;
+
+		text-decoration: underline;
+		text-decoration-style: dotted;
+		transition: all 0.15s ease-in;
+		text-underline-position: under;
+
+		&:hover {
+			color: @brand-color;
+		}
+		
+		i {
+			display: inline-block;
+			transform: rotateY(180deg);
+			
+			margin-left: 40px;
+			font-size: 14px;
+			color: @brand-color;
+		}
+
+		&:active,
+		&:focus,
+		&:hover {
+			color: @brand-color;
+			text-decoration: none;
+		}
+
+		&.active {
+			color: @brand-color;
+
+			text-decoration: underline;
+			text-decoration-style: dotted;
+			text-underline-position: under;
+		}
+	}
+}
+
+@media @mobile {
+	.tariffs {
+		margin-bottom: 30px;
+		
+		&__wrapper {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+		
+		&__top {
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+			
+			margin-bottom: 20px;
+			
+			.text {
+				text-align: left;
+				font-size: 16px;
+				line-height: 24px;
+			}
+		}
+		
+		&__block {
+			width: 100%;
+			
+			
+		}
+		
+		&__tab {
+			font-size: 24px;
+			color: #fff;
+			margin-bottom: 20px;
+
+			i {
+				display: none;
+			}
+
+			&:hover {
+				color: #fff;
+			}
+
+			&.active {
+				color: #000;
+				background-color: #fff;
+
+			}
+		}
+		
+		&__left {
+			overflow: hidden;
+			background-color: @brand-color;
+			padding-top: 40px;
+			padding-left: 15px;
+			padding-bottom: 70px;
+			
+			.opened-bg {
+				
+				&.vehicle-bg {
+					width: 205px;
+					height: 261px;
+					
+					left: -20px;
+					bottom: -100px;
+				}
+				
+				&.curiers-bg {
+					width: 213px;
+					height: 306px;
+					
+					left: 0;
+					bottom: 0;
+				}
+			}
+			
+			&.opened-vehicle {
+				.opened-bg.vehicle-bg {
+					opacity: 1;
+				}
+			}
+
+			&.opened-curiers {
+				.opened-bg.curiers-bg {
+					opacity: 1;
+				}
+			}
+		}
+		
+		&__close-btn {
+			display: none !important;
+		}
+		
+		&__right {
+			background-color: #f3f3f3;
+			padding-left: 15px;
+			padding-right: 15px;
+			padding-bottom: 30px;
+			
+			.phone-link {
+				text-align: center;
+				font-size: 22px;
+				
+				.phone-ico {
+					width: 40px;
+					height: 40px;
+					
+					margin-right: 10px;
+				}
+			}
+		}
+		
+		&__item {
+			position: relative;
+			
+			
+			&:not(.active) {
+				display: block;
+				opacity: 1;
+				pointer-events: all;
+			}
+			
+			&:not(.opened-mobile) {
+				display: none;
+				
+			}
+		}
+		
+		
+	}
+}
+
+
+@media @tablet {
+	.tariffs {
+		margin-bottom: 55px;
+		
+		&__wrapper {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+		
+		&__top {
+			margin-bottom: 55px;
+		}
+		
+		&__close-btn {
+			opacity: 0;
+		}
+		
+		&__item {
+			opacity: 0;
+			transition: all 0.1s ease-in;
+		}
+		
+		&__left {
+			overflow: hidden;
+			height: 100%;
+			width: 70%;
+			
+			padding-left: 0;
+			padding-top: 110px;
+			
+			transition: all 0.2s ease-in-out;
+			
+    		border-width: 0;
+			
+			.opened-bg {
+				
+				&.vehicle-bg {
+					width: 293px;
+					height: 342px;
+				}
+				
+				&.curiers-bg {
+					width: 213px;
+					height: 306px;
+				}
+			}
+			
+			.tabs-wrap {
+				padding-left: 20px;
+				width: 350px;
+				
+			}
+		}
+		
+		&__tab {
+			margin-bottom: 30px;
+			padding-left: 5px;
+			padding-right: 5px;
+			padding-bottom: 4px;
+			
+			font-size: 18px;
+		}
+		
+		&__right {
+			height: 100%;
+			width: 30%;
+			
+			position: absolute;
+			top: 0;
+			right: 0;
+			
+			transition: all 0.2s ease-in-out;
+			
+			ul {
+				pointer-events: none;
+				opacity: 0;
+				transition: all 0.2s ease-in 0.2s;
+				
+				padding-left: 30px;
+				padding-right: 60px;
+				
+				padding-top: 40px;
+				width: 100%;
+			}
+			
+			.phone-link {
+				padding-left: 50px;
+			}
+			
+			.box-block {
+				position: absolute;
+				
+				top: 50%;
+				left: -170px;
+				
+				width: 387px;
+				height: 333px;
+				
+				margin-top: -166px;
+				
+				transition: all 0.15s ease-in;
+				
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+				background-image: url("../img/box-img.png");
+			}
+		}
+		
+		&__close-btn {
+			top: 10px;
+			right: 10px;
+		}
+		
+		&__block {
+			height: 435px;
+			
+			&.opened {
+				
+				.tariffs__left {
+					width: 30%;
+					background-color: @brand-color;
+					
+					&.opened-vehicle {
+						.opened-bg.vehicle-bg {
+							opacity: 1;
+						}
+					}
+					
+					&.opened-curiers {
+						.opened-bg.curiers-bg {
+							opacity: 1;
+						}
+					}
+				}
+				
+				.tariffs__item.active {
+					opacity: 1;
+					pointer-events: all;
+				}
+				
+				.tariffs__tab {
+					color: #fff;
+					
+					i {
+						display: none;
+					}
+					
+					&:hover {
+						color: #fff;
+					}
+					
+					&.active {
+						color: #000;
+						background-color: #fff;
+						
+					}
+				}
+				
+				.tariffs__right {
+					width: 70%;
+					background-color: #f3f3f3;
+					
+					ul {
+						pointer-events: all;
+						opacity: 1;
+					}
+					
+					.box-block {
+						opacity: 0;
+						visibility: hidden;
+					}
+					
+					.tariffs__close-btn {
+						opacity: 1;
+						pointer-events: all;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@media @desktop {
+	.tariffs {
+		margin-bottom: 55px;
+		
+		&__wrapper {
+			.container();
+		}
+		
+		&__top {
+			margin-bottom: 65px;
+		}
+		
+		&__close-btn {
+			opacity: 0;
+		}
+		
+		&__item {
+			opacity: 0;
+			transition: all 0.1s ease-in;
+		}
+		
+		&__left {
+			overflow: hidden;
+			height: 100%;
+			width: 50%;
+			
+			padding-left: 0;
+			padding-top: 110px;
+			
+			transition: all 0.2s ease-in-out;
+			
+    		border-width: 0;
+			
+			.opened-bg {
+				
+				&.vehicle-bg {
+					width: 293px;
+					height: 342px;
+				}
+				
+				&.curiers-bg {
+					width: 213px;
+					height: 306px;
+				}
+			}
+			
+			.tabs-wrap {
+				padding-left: 35px;
+				width: 570px;
+				
+			}
+		}
+		
+		&__tab {
+			margin-bottom: 30px;
+			padding-left: 5px;
+			padding-right: 5px;
+			padding-bottom: 4px;
+			
+		}
+		
+		&__right {
+			height: 100%;
+			width: 50%;
+			
+			position: absolute;
+			top: 0;
+			right: 0;
+			
+			transition: all 0.2s ease-in-out;
+			
+			ul {
+				pointer-events: none;
+				opacity: 0;
+				transition: all 0.2s ease-in 0.2s;
+				
+				padding-left: 50px;
+				width: 670px;
+			}
+			
+			.phone-link {
+				padding-left: 50px;
+			}
+			
+			.box-block {
+				position: absolute;
+				
+				top: 50%;
+				left: -170px;
+				
+				width: 387px;
+				height: 333px;
+				
+				margin-top: -166px;
+				
+				transition: all 0.15s ease-in;
+				
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+				background-image: url("../img/box-img.png");
+			}
+		}
+		
+		&__block {
+			height: 435px;
+			
+			&.opened {
+				
+				.tariffs__left {
+					width: 28%;
+					background-color: @brand-color;
+					
+					&.opened-vehicle {
+						.opened-bg.vehicle-bg {
+							opacity: 1;
+						}
+					}
+					
+					&.opened-curiers {
+						.opened-bg.curiers-bg {
+							opacity: 1;
+						}
+					}
+				}
+				
+				.tariffs__item.active {
+					opacity: 1;
+				}
+				
+				.tariffs__tab {
+					color: #fff;
+					
+					i {
+						display: none;
+					}
+					
+					&:hover {
+						color: #fff;
+					}
+					
+					&.active {
+						color: #000;
+						background-color: #fff;
+						
+					}
+				}
+				
+				.tariffs__right {
+					width: 72%;
+					background-color: #f3f3f3;
+					
+					ul {
+						pointer-events: all;
+						opacity: 1;
+					}
+					
+					.box-block {
+						opacity: 0;
+						visibility: hidden;
+					}
+					
+					.tariffs__close-btn {
+						opacity: 1;
+						pointer-events: all;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+

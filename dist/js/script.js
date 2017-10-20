@@ -62,6 +62,11 @@ $('#problems-count').countUp({
 	'delay': 10
 });
 
+$('#advantages-count').countUp({
+	'time': 2000,
+	'delay': 10
+});
+
 $('.nice-select').niceSelect();
 
 
@@ -80,6 +85,17 @@ $('.transport-sel-slider').slick({
 
 });
 
+$('.advantages__item').hover(function() {
+	var thisTarget = $(this).attr('data-target');
+	
+	$('#' + thisTarget).addClass('active');
+	
+	console.log('hoverd');
+}, function() {
+	var thisTarget = $(this).attr('data-target');
+	
+	$('#' + thisTarget).removeClass('active');
+});
 
 
 $('[data-toggle="slide-message"]').click(function(e) {
@@ -114,8 +130,6 @@ $('#promotions-slider').slick({
 	infinite: true,
 	adaptiveHeight: true,
 	fade: true,
-	adaptiveHeight: true
-
 });
 
 
@@ -185,7 +199,37 @@ $('.reviews__item .block-video').click(function() {
 	$(this).html('<iframe width="100%" height="100%" src="http://www.youtube.com/embed/'+ dataYoutubeID +'?autoplay=1" frameborder="0" allowfullscreen></iframe>');
 });
 
+$('.tariffs__tab').click(function(e) {
+	e.preventDefault();
+	
+	var thisTarget = $(this).attr('data-target'),
+		thisLeftBG = $(this).attr('data-left-bg');
+	
+	$(this).addClass('active').siblings().removeClass('active');
+	$('#tariffs-left').removeClass('opened-curiers opened-vehicle').addClass(thisLeftBG);
+	
+	
+	$(thisTarget).addClass('active opened-mobile').siblings().removeClass('active opened-mobile');
+	
+	if ($(window).width() > 767) {
+		$(thisTarget).addClass('active').siblings().removeClass('active');
+		
+		if (!$('#tariffs-block').hasClass('opened')) {
+			$('#tariffs-block').addClass('opened');
+		}
+	}
+});
 
+$('.tariffs__close-btn').click(function(e) {
+	e.preventDefault();
+	
+	$(this).addClass('active').siblings().removeClass('active');
+	
+	
+	$('#tariffs-block').removeClass('opened');
+	$('#tariffs-left').removeClass('opened-curiers opened-vehicle');
+	$('.tariffs__tab').removeClass('active');
+});
 
 
 
