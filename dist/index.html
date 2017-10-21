@@ -386,10 +386,30 @@
 								</div>
 								
 								<ul class="details-options">
-									<li>Перевозка мебели</li>
-									<li>Перевозка дивана</li>
-									<li>Перевозка шкафа</li>
-									<li>Перевозка вещей</li>
+									
+									<li>
+										<input type="checkbox" id="mebel-2-opt" hidden="hidden">
+										
+										<label for="mebel-2-opt">Перевозка мебели</label>
+									</li>
+									
+									<li>
+										<input type="checkbox" id="mebel-3-opt" hidden="hidden">
+										
+										<label for="mebel-3-opt">Перевозка дивана</label>
+									</li>
+									
+									<li>
+										<input type="checkbox" id="mebel-4-opt" hidden="hidden">
+										
+										<label for="mebel-4-opt">Перевозка шкафа</label>
+									</li>
+									
+									<li>
+										<input type="checkbox" id="mebel-5-opt" hidden="hidden">
+										
+										<label for="mebel-5-opt">Перевозка вещей</label>
+									</li>
 								</ul>
 							</div>
 							
@@ -415,8 +435,17 @@
 								</div>
 								
 								<ul class="details-options">
-									<li>Перевозка холодильника</li>
-									<li>Перевозка стиральной машины</li>
+									<li>
+										<input type="checkbox" id="fridge-opt" hidden="hidden">
+										
+										<label for="fridge-opt">Перевозка холодильника</label>
+									</li>
+									
+									<li>
+										<input type="checkbox" id="wash-opt" hidden="hidden">
+										
+										<label for="wash-opt">Перевозка стиральной машины</label>
+									</li>
 								</ul>
 							</div>
 							
@@ -514,9 +543,24 @@
 								</div>
 								
 								<ul class="details-options">
-									<li>Заказ Газели</li>
-									<li>Заказ Каблучка</li>
-									<li>Заказ Бычка</li>
+								
+									<li>
+										<input type="checkbox" id="car-1-opt" hidden="hidden">
+										
+										<label for="car-1-opt">Заказ Газели</label>
+									</li>
+									
+									<li>
+										<input type="checkbox" id="car-2-opt" hidden="hidden">
+										
+										<label for="car-2-opt">Заказ Каблучка</label>
+									</li>
+									
+									<li>
+										<input type="checkbox" id="car-3-opt" hidden="hidden">
+										
+										<label for="car-3-opt">Заказ Бычка</label>
+									</li>
 								</ul>
 							</div>
 							
@@ -545,10 +589,29 @@
 								</div>
 								
 								<ul class="details-options">
-									<li>Грузоперевозки Санкт-Петербург - Москва</li>
-									<li>Грузоперевозки Санкт-Петербург - Краснодар</li>
-									<li>Грузоперевозки Санкт-Петербург - Череповец</li>
-									<li>Грузоперевозки Санкт-Петербург - Петрозаводск</li>
+									<li>
+										<input type="checkbox" id="intercity-2-opt" hidden="hidden">
+										
+										<label for="intercity-2-opt">Грузоперевозки Санкт-Петербург - Москва</label>
+									</li>
+									
+									<li>
+										<input type="checkbox" id="intercity-3-opt" hidden="hidden">
+										
+										<label for="intercity-3-opt">Грузоперевозки Санкт-Петербург - Краснодар</label>
+									</li>
+									
+									<li>
+										<input type="checkbox" id="intercity-4-opt" hidden="hidden">
+										
+										<label for="intercity-4-opt">Грузоперевозки Санкт-Петербург - Череповец</label>
+									</li>
+									
+									<li>
+										<input type="checkbox" id="intercity-5-opt" hidden="hidden">
+										
+										<label for="intercity-5-opt">Грузоперевозки Санкт-Петербург - Петрозаводск</label>
+									</li>
 								</ul>
 							</div>
 							
@@ -1569,17 +1632,7 @@
 				var toValue = $('#route-to').val();
 				
 				if (toValue === '' || fromValue === '') {
-					suggestViewFrom.state.set({
-						open: false,
-						panelClosed: true,
-						items: []
-					});
-
-					suggestViewTo.state.set({
-						open: false,
-						panelClosed: true,
-						items: []
-					});
+					
 					
 				} else {
 					
