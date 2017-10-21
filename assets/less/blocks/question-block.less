@@ -401,13 +401,20 @@
 				height: 550px;
 				margin-bottom: 30px;
 				
-				img {
+				.img-wrapper-inner {
 					position: absolute;
 					height: 100%;
 					width: auto;
 					
 					right: 0;
 					top: 0;
+					overflow: hidden;
+				}
+				
+				img {
+					display: block;
+					height: 100%;
+					width: auto;
 					
 					transition: all 1.5s ease-in;
 				}
@@ -415,7 +422,7 @@
 				&:hover {
 
 					img {
-						transform: scale(1.1);
+						transform: scale(1.2);
 					}
 				}
 			}

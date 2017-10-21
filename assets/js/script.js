@@ -1,4 +1,3 @@
-
 	
 $('.tooltip').tooltipster({
 	position: 'top',
@@ -55,6 +54,15 @@ $('.services__item .toggle-btn').click(function(e) {
 	e.preventDefault();
 	
 	$(this).parent().addClass('active').siblings().removeClass('active');
+	
+	if ($(window).width() < 768) {
+		var target = $(this);
+		var top = target.offset().top - 50;
+		
+		$('html,body').animate({
+		  scrollTop: top
+		}, 50);
+	}
 });
 
 $('#problems-count').countUp({
@@ -75,14 +83,20 @@ $('.transport-sel-slider').on('init', function() {
 	$(this).find('.slick-dots').prepend('<a href="javascript:;" class="not-link-mixin transport-sel-arrow prev"><i class="icon-chevron"></a>').append('<a href="javascript:;" class="not-link-mixin transport-sel-arrow next"><i class="icon-chevron"></a>');
 });
 
-$('.transport-sel-slider').slick({
-	slidesToShow: 1,
-	slidesToScroll: 1,
-	arrows: false,
-	dots: true,
-	infinite: true,
-	adaptiveHeight: true
+$('.transport-sel-slider').each(function() {
 
+	$(this).slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		initialSlide: 0,
+		arrows: false,
+		dots: true,
+		infinite: true,
+		adaptiveHeight: true,
+		appendDots: $(this).next().children('.slick-dots-wrap')
+
+	});
+	
 });
 
 $('.advantages__item').hover(function() {
@@ -96,8 +110,15 @@ $('.advantages__item').hover(function() {
 	$('#' + thisTarget).removeClass('active');
 });
 
+$('[data-fancybox]').fancybox({
+	mobile : {
+		clickSlide : function( current, event ) {
+			return current.type === 'image' ? 'toggleControls' : "close";
+		}
+	},
+})
 
-$('[data-toggle="slide-message"]').click(function(e) {
+$('[data-toggle="slide-faq"]').click(function(e) {
 	e.preventDefault();
 	
 	$(this).toggleClass('active');
@@ -109,13 +130,13 @@ $('[data-toggle="slide-message"]').click(function(e) {
 $('.transport-sel-arrow.prev').click(function(e) {
 	e.preventDefault();
 	
-	$(this).parents('.transport-sel-slider').slick('slickPrev');
+	$(this).parent().prev().slick('slickPrev');
 });
 
 $('.transport-sel-arrow.next').click(function(e) {
 	e.preventDefault();
 	
-	$(this).parents('.transport-sel-slider').slick('slickNext');
+	$(this).parent().prev().slick('slickNext');
 });
 
 $('#promotions-slider').slick({

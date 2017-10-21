@@ -311,11 +311,18 @@
 				right: -35px;
 			}
 			
-			img {
+			.img-wrapper {
 				position: absolute;
-				right: 0;
 				top: 0;
+				right: 0;
 				
+				height: 100%;
+				width: auto;
+				overflow: hidden;
+			}
+			
+			img {
+				display: block;
 				height: 100%;
 				width: auto;
 				
@@ -329,7 +336,7 @@
 			&:hover {
 				
 				img {
-					transform: scale(1.1);
+					transform: scale(1.2);
 				}
 			}
 		}
@@ -339,18 +346,15 @@
 			
 			.text-message {
 				.accent {
+					color: @main-white;
 					background-color: transparent;
 					background-image: linear-gradient(to left,
                                       
                                       transparent 50%,
                                       @brand-color 50%);
-                   	background-position: 100% 0;
+                   	
     				background-size: 200% 100%;
-					
-					transition: all 0.5s ease-in;
-					transition-delay: 0.2s;
-					
-					color: #000;
+					background-position: 0 0;
 				}
 			}
 			
@@ -378,9 +382,9 @@
 				
 				.text-message {
 					.accent {
-						color: @main-white;
-						
-						background-position: 0 0;
+						animation: slideAccent 0.5s;
+						animation-fill-mode: forwards;
+						animation-delay: 0.2s;
 					}
 				}
 			}
@@ -389,6 +393,17 @@
 }
 
 
+@keyframes slideAccent {
+	0% {
+		background-position: 100% 0;
+		background-size: 200% 100%;
 
+		color: #000;
+	}
+	100% {
+		background-position: 0 0;
+		color: @main-white;
+	}
+}
 
 
