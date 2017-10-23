@@ -197,11 +197,14 @@ a.brand-link {
 	}
 }
 
+
+
 .text-input {
 	border: none;
 	outline: none !important;
 	-webkit-appearance: none;
 	background: none;
+	overflow: hidden;
 
 	height: 65px;
 	line-height: normal;
@@ -222,26 +225,22 @@ a.brand-link {
 
 	&:-moz-placeholder {
 		font-size: 16px;
-		line-height: 65px;
 		color: #879ea7;
 		font-weight: 400;
 	}
 	&::-moz-placeholder { 
 		font-size: 16px;
-		line-height: 65px;
 		color: #879ea7;
 		font-weight: 400;
 	}
 	&:-ms-input-placeholder { 
 		font-size: 16px;
-		line-height: 65px;
 		color: #879ea7;
 		font-weight: 400;
 	}
 	&::-webkit-input-placeholder {
 		font-size: 16px;
-		line-height: 65px;
-		color: #879ea7;
+		color: #879ea7 !important;
 		font-weight: 400;
 	}
 	
@@ -251,16 +250,16 @@ a.brand-link {
 		color: @text-dark-gray;
 		
 		&:-moz-placeholder {
-			color: #879ea7;
+			color: #879ea7 !important;
 		}
 		&::-moz-placeholder { 
-			color: #879ea7;
+			color: #879ea7 !important;
 		}
 		&:-ms-input-placeholder { 
-			color: #879ea7;
+			color: #879ea7 !important;
 		}
 		&::-webkit-input-placeholder {
-			color: #879ea7;
+			color: #879ea7 !important;
 		}
 		
 	}
@@ -270,16 +269,20 @@ a.brand-link {
 		color: #fff;
 		
 		&:-moz-placeholder {
-			color: rgba(255,255,255,0.7);
+			color: #fff !important;
+			opacity: 0.7 !important;
 		}
 		&::-moz-placeholder { 
-			color: rgba(255,255,255,0.7);
+			color: #fff !important;
+			opacity: 0.7 !important;
 		}
 		&:-ms-input-placeholder { 
-			color: rgba(255,255,255,0.7);
+			color: #fff !important;
+			opacity: 0.7 !important;
 		}
 		&::-webkit-input-placeholder {
-			color: rgba(255,255,255,0.7);
+			color: #fff !important;
+			opacity: 0.7 !important;
 		}
 		
 	}
@@ -376,19 +379,6 @@ a.brand-link {
 	
 	.text-input {
 		height: 55px;
-		
-		&:-moz-placeholder {
-			line-height: 55px;
-		}
-		&::-moz-placeholder { 
-			line-height: 55px;
-		}
-		&:-ms-input-placeholder { 
-			line-height: 55px;
-		}
-		&::-webkit-input-placeholder {
-			line-height: 55px;
-		}
 	}
 }
 
