@@ -209,6 +209,52 @@
 				text-transform: uppercase;
 				color: #fff;
 			}
+			
+			a {
+				display: inline-block;
+				position: relative;
+				outline: none !important;
+				text-decoration: none !important;
+				font-size: inherit;
+
+				color: @brand-color;
+
+				font-weight: 400;
+
+				&:after {
+					content: "";
+					display: block;
+					width: 100%;
+					height: 1px;
+
+					background-image: linear-gradient(to right, @brand-color 50%, rgba(0,0,0,0.0001) 50%);
+					background-size: 4px 1px;
+
+					background-repeat: repeat-x;
+
+					position: absolute;
+					bottom: -2px;
+					left: 0;
+
+					transition: all 0.05s ease-in;
+				}
+
+				&:hover {
+					color: @brand-color-hover;
+
+					&:after {
+						opacity: 0;
+					}
+				}
+
+				&:active,
+				&:focus,
+				&:hover {
+					color: @brand-color;
+					text-decoration: none !important;
+
+				}
+			}
 		}
 		
 		.background-img {
@@ -282,6 +328,16 @@
 			position: relative;
 			flex-shrink: 0;
 			margin-bottom: 70px;
+			
+			min-width: 200px;
+			
+			.slick-dots {
+				text-align: center;
+			}
+		}
+		
+		&__dots {
+			width: 100%;
 		}
 		
 		&__item {
