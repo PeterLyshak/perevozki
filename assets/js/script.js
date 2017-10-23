@@ -390,5 +390,151 @@ $('.tariffs__close-btn').click(function(e) {
 	$('.tariffs__tab').removeClass('active');
 });
 
+// MODAL SCRIPT
+
+function openModal(hrefModal) {
+	$('body, html').css('overflow', 'hidden');
+	
+	$(hrefModal).fadeIn(300);
+}
+
+function closeModals() {
+	$('body, html').css('overflow', '');
+	
+	$('.popup-block:not(:hidden)').fadeOut(300);
+}
+
+function showThanksModal() {
+	$('.popup-block:not(:hidden)').fadeOut(300);
+	
+	$('#thanks-popup').fadeIn(300);
+}
+
+$(document).off('click', '[data-toggle="modal"]').on('click', '[data-toggle="modal"]', function(e) {
+	e.preventDefault();
+	
+	var hrefModal = $(this).attr('data-target');
+	
+	openModal(hrefModal);
+});
+
+$(document).off('click', '.popup-block__overlay').on('click', '.popup-block__overlay', function(e) {
+	var closeButton = $(this).children('.popup-block__close');
+	
+	if (e.target != this) {
+//		return false;
+	} else {
+		closeModals();
+	}
+});
+
+$(document).off('click', '.popup-block__close').on('click', '.popup-block__close', function(e) {
+	e.preventDefault();
+	
+	closeModals();
+});
 
 
+$(".basic-ajax-form").submit(function () {
+	var formNm = $(this);
+	$.ajax({
+		type: "POST",
+		url: 'mail-basic.php',
+		data: formNm.serialize(),
+		success: function (data) {
+			showThanksModal();
+			formNm[0].reset();
+		},
+		error: function (jqXHR, text, error) {
+			// Вывод текста ошибки отправки
+			$(formNm).html(error);  
+		}
+	});
+	return false;
+});
+
+$(".services-ajax-form").submit(function () {
+	var formNm = $(this);
+	$.ajax({
+		type: "POST",
+		url: 'mail-services.php',
+		data: formNm.serialize(),
+		success: function (data) {
+			showThanksModal();
+			formNm[0].reset();
+		},
+		error: function (jqXHR, text, error) {
+			// Вывод текста ошибки отправки
+			$(formNm).html(error);  
+		}
+	});
+	return false;
+});
+
+$(".promotions-ajax-form").submit(function () {
+	var formNm = $(this);
+	$.ajax({
+		type: "POST",
+		url: 'mail-promotions.php',
+		data: formNm.serialize(),
+		success: function (data) {
+			showThanksModal();
+			formNm[0].reset();
+		},
+		error: function (jqXHR, text, error) {
+			// Вывод текста ошибки отправки
+			$(formNm).html(error);  
+		}
+	});
+	return false;
+});
+
+$('.services__options-block .submit-button').click(function(e) {
+	e.preventDefault();
+	
+	var choosenServices = [];
+	$('#services-choosen-text').text('');
+	
+	$(this).parent().find('input[type="checkbox"]').each(function() {
+		if ($(this).is(':checked')) {
+			choosenServices.push($(this).next().children('.name').text());
+		}
+	});
+	
+	openModal('#services-popup');
+	
+	if (choosenServices.length > 0) {
+		for (var i = 0; i < choosenServices.length; i++) {
+			var curText;
+			
+			if (i < choosenServices.length - 1) {
+				curText = choosenServices[i] + '\, ';
+			} else {
+				curText = choosenServices[i];
+			}
+			
+			$('#services-choosen-text').append(curText);
+		}
+		
+		$('#services_list').val($('#services-choosen-text').text());
+		
+	} else {
+		$('#services-choosen-text').text('Не выбрано ничего');
+		$('#services_list').val('Не выбрано ничего');
+	}
+	
+	
+});
+
+$('[data-toggle="promotions-modal"]').click(function(e) {
+	e.preventDefault();
+	
+	$('#services-choosen-text').text('');
+	
+	var choosenPromotion = $(this).parent().find('.heading').text();
+	
+	$('#promotion-choosen-name').text(choosenPromotion);
+	$('#promotion-choosen-input').val(choosenPromotion);
+	
+	openModal('#promotions-popup');
+});

@@ -1,0 +1,164 @@
+.mobile-menu {
+	background-color: #242830;
+	
+	&__top-menu {
+		display: none;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		
+		li {
+			margin: 0 auto;
+			text-align: center;
+			
+			a {
+				display: inline-block;
+				font-size: 17px;
+				line-height: 36px;
+			}
+		}
+	}
+	
+	&__row {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+	
+	&__categories {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		
+		> li {
+			
+			.top-link {
+				text-decoration: none !important;
+				font-size: 15px;
+				line-height: 24px;
+				color: #fff;
+				font-weight: 800;
+				text-transform: uppercase;
+				
+				transition: all 0.2s ease-in;
+				
+				&:hover {
+					opacity: 0.7;
+				}
+			}
+			
+			> ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				
+				> li {
+					a {
+						font-size: 15px;
+						line-height: 24px;
+						color: @brand-color;
+						text-decoration: none;
+						
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+					
+					> ul {
+						list-style: none;
+						padding: 0;
+						margin: 0;
+						
+						li {
+							
+							&:before {
+								content: "—";
+								color: #fff;
+								display: inline-block;
+								
+								margin-right: 15px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media @mobile {
+	.mobile-menu {
+		
+		&__top-menu {
+			display: block;
+			margin-bottom: 45px;
+		}
+		
+		&__row {
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+			
+			display: block;
+			
+		}
+		
+		&__categories {
+			width: 100%;
+			
+			> li {
+				text-align: center;
+				margin-bottom: 20px;
+				
+				.top-link {
+					font-size: 15px;
+				}
+				
+				> ul {
+					display: none;
+				}
+			}
+		}
+		
+		
+	}
+}
+
+
+@media @tablet {
+	.mobile-menu {
+		width: 670px;
+		
+		&__categories {
+			width: 50%;
+		}
+	}
+}
+
+
+@media @desktop {
+	.mobile-menu {
+		width: 820px;
+		
+		&__categories {
+			
+			> li {
+				margin-bottom: 40px;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
