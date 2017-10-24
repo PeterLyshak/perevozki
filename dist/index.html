@@ -1951,6 +1951,92 @@
 		</div>
 	</div>
 	
+	<div class="popup-block" id="smeta-popup">
+		<div class="popup-block__overlay">
+			<div class="popup-block__popup unique__popup">
+				<div class="inner-content">
+					<a href="javascript:;" class="popup-block__close"></a>
+					
+					<div class="top-heading">Отправьте файл со сметой</div>
+					
+					<div class="text">мы предложим более <span class="accent">выгодную цену</span></div>
+					
+					<form class="unique__popup-form">
+						<!-- Hidden Required Fields -->
+						<input type="hidden" name="form_subject" value="Загрузка файла смета">
+						<!-- END Hidden Required Fields -->
+
+						<input type="tel" name="tel" class="text-input dark-input" placeholder="+7 (___) ___ – __ – __" required>
+						
+						<div class="file-block">
+							<div class="label">Перетащите файл со сметой сюда или нажмите кнопку "Выбрать файл"</div>
+							
+							<button type="button" class="btn upload-button">Выбрать файл</button>
+						</div>
+
+						<button type="submit" class="submit-button btn">Отправить</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="popup-block" id="thanks-popup">
+		<div class="popup-block__overlay">
+			<div class="popup-block__popup popup-block__thanks">
+				<div class="inner-content">
+					<a href="javascript:;" class="popup-block__close"></a>
+					
+					<div class="top-heading">Заявка принята</div>
+					
+					<div class="text">Мы перезвоним через 30 секунд</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="popup-block" id="calculation-popup">
+		<div class="popup-block__overlay">
+			<div class="popup-block__popup calculation__popup">
+				<div class="inner-content">
+					<a href="javascript:;" class="popup-block__close"></a>
+					
+					<div class="top-heading">Вы выбрали:</div>
+					
+					<div class="route-text">
+						<b>Маршрут:</b><br>
+						<span id="calc-route">-</span>
+					</div>
+					
+					<div class="calc-row">
+						<ul class="calc-col">
+							<li><b>Время аренды:</b> <span id="calc-rent-time"></span></li>
+							<li><b>Транспорт:</b> <span id="calc-transport"></span></li>
+						</ul>
+						
+						<ul class="calc-col">
+							<li><b>Время подачи:</b> <span id="calc-arrive-time"></span></li>
+							<li><b>Грузчики:</b> <span id="calc-curiers"></span></li>
+						</ul>
+					</div>
+					
+					<div class="bottom-content">
+						<div class="price-block">
+							<div class="left-ico"><img src="img/icons/calc-price-ico.png" alt=""></div>
+							
+							<div class="right-text">
+								<div class="label">Стоимость составляет</div>
+								<span class="result-price" id="result-price">1 500 руб.</span>
+							</div>
+						</div>
+						
+						<button type="submit" class="btn submit-button">Заказать</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 	<script src="js/jquery-3.2.1.js"></script>
 	<script src="js/plugins.min.js"></script>
 	<script src="js/scripts.min.js"></script>

@@ -716,7 +716,7 @@
 					<p>Отправьте нам предложенный вариант и мы сделаем всё, чтобы сделать цену меньше</p>
 				</div>
 				
-				<button data-toggle="modal" data-target="#" class="btn modal-button">Отправить</button>
+				<button data-toggle="modal" data-target="#smeta-popup" class="btn modal-button">Отправить</button>
 			</div>
 		</div>
 	</div>
@@ -1737,6 +1737,50 @@
 							</form>
 						</div>
 					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="popup-block" id="smeta-popup">
+		<div class="popup-block__overlay">
+			<div class="popup-block__popup unique__popup">
+				<div class="inner-content">
+					<a href="javascript:;" class="popup-block__close"></a>
+					
+					<div class="top-heading">Отправьте файл со сметой</div>
+					
+					<div class="text">мы предложим более <span class="accent">выгодную цену</span></div>
+					
+					<form class="unique__popup-form">
+						<!-- Hidden Required Fields -->
+						<input type="hidden" name="form_subject" value="Загрузка файла смета">
+						<!-- END Hidden Required Fields -->
+
+						<input type="tel" name="tel" class="text-input dark-input" placeholder="+7 (___) ___ – __ – __" required>
+						
+						<div class="file-block">
+							<div class="label">Перетащите файл со сметой сюда или нажмите кнопку "Выбрать файл"</div>
+							
+							<button type="button" class="btn upload-button">Выбрать файл</button>
+						</div>
+
+						<button type="submit" class="submit-button btn">Отправить</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="popup-block" id="thanks-popup">
+		<div class="popup-block__overlay">
+			<div class="popup-block__popup popup-block__thanks">
+				<div class="inner-content">
+					<a href="javascript:;" class="popup-block__close"></a>
+					
+					<div class="top-heading">Заявка принята</div>
+					
+					<div class="text">Мы перезвоним через 30 секунд</div>
 				</div>
 			</div>
 		</div>

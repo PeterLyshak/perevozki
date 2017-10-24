@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $headers .= "Reply-To: ". strip_tags($sendfrom) . "\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html;charset=utf-8 \r\n";
-    $subject = "Заявка з сайту MetodEstate";
+    $subject = "Заявка с сайта Перевозки СПБ";
     $message = "<b>Проект:</b> Перевозки <br>
 				<b>Имя:</b> $name <br>
 				<b>Телефон:</b> $tel<br>
