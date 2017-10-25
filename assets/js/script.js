@@ -538,3 +538,104 @@ $('[data-toggle="promotions-modal"]').click(function(e) {
 	
 	openModal('#promotions-popup');
 });
+
+$('#calc-transport-sel-tabs .tab').click(function(e) {
+	e.preventDefault();
+	
+	var thisHref = $(this).attr('data-target');
+	
+	$(thisHref).addClass('active').siblings().removeClass('active');
+	$(this).addClass('active').siblings().removeClass('active');
+	
+	$(thisHref).find('.transport-sel-slider').slick('setPosition');
+});
+
+$('#calc-submit').click(function(e) {
+	e.preventDefault();
+	
+	var calcBlock = $('#calculation');
+	
+	$('#route-from, #route-to').removeClass('error');
+	
+	var hrefModal = $(this).attr('data-target');
+	
+	var routeFromVal = $('#route-from').val();
+	var routeToVal = $('#route-to').val();
+	
+	var choosenRentTime = $('#select-rent-time option:checked').text();
+	var choosenRentTimeVal = $('#select-rent-time').val();
+	
+	var choosenCuriersCount = $('#select-curiers-quant').val();
+	
+	var choosenTransport = $('#calc-transport-items .active .slick-current');
+	var choosenTransportPrice = $('#calc-transport-items .active .slick-current').attr('data-price');
+	
+	var choosenTimeDay = $('#calc-time-day').val();
+	var choosenTimeHour = $('#calc-time-hour').val();
+	var choosenTimeMinute = $('#calc-time-min').val();
+	
+	// Валидация полей адресов
+	
+	if (routeFromVal === '') {
+		$('#route-from').addClass('error');
+		
+		var calcBlockTop = calcBlock.offset().top;
+		
+		$('html,body').animate({
+		  scrollTop: calcBlockTop
+		}, 400);
+		return;
+	} 
+	
+	if (routeToVal === '') {
+		$('#route-to').addClass('error');
+		
+		var calcBlockTop = calcBlock.offset().top;
+		
+		$('html,body').animate({
+		  scrollTop: calcBlockTop
+		}, 400);
+		return;
+	} 
+	
+	$('#calc-route').text(routeFromVal + ' - ' + routeToVal);
+	
+	// Выбор времени аренды
+	
+	$('#calc-rent-time').text(choosenRentTime);
+	
+	// Выбор машины
+	
+	$('#calc-transport').text($(choosenTransport).find('.car-name').text());
+	
+	// Время подачи
+	
+	if (choosenTimeDay != '0') {
+		$('#calc-arrive-time').text(choosenTimeDay + ' в ' + choosenTimeHour + ':' + choosenTimeMinute);
+	} else {
+		$('#calc-arrive-time').text('Не выбрано');
+	}
+	
+	// Грузчики
+	
+	$('#calc-curiers').text(choosenCuriersCount);
+	
+	// Расчет стоимости
+	
+	var curiersResultPrice = choosenCuriersCount * (300 * parseInt(choosenRentTimeVal));
+	
+	var transportResultPrice = choosenTransportPrice * parseInt(choosenRentTimeVal);
+	
+	$('#result-price').text(curiersResultPrice + transportResultPrice + ' руб.');
+	
+	openModal(hrefModal);
+});
+
+
+
+
+
+
+
+
+

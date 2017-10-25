@@ -43,6 +43,35 @@
 		margin-bottom: 15px;
 	}
 	
+	&__time-popup {
+		background-color: rgba(25,27,31,0.65);
+		
+		.selects-row {
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+		
+		.select-label {
+			display: none;
+		}
+		
+		.select-wrapper {
+			
+			.nice-select {
+				background-color: #191b1f;
+				color: #fff;
+				
+				
+			}
+		}
+	}
+	
 	&__transport-sel {
 		
 		.m-b {
@@ -170,6 +199,15 @@
 						font-weight: 700;
 						margin-bottom: 10px;
 						
+					}
+					
+					.img-wrapper {
+						
+						img {
+							display: block;
+							width: 100%;
+							height: auto;
+						}
 					}
 				}
 				
@@ -389,17 +427,25 @@
 			
 			padding-left: 15px;
 			
-			&:-moz-placeholder {
-				line-height: 50px;
-			}
-			&::-moz-placeholder { 
-				line-height: 50px;
-			}
-			&:-ms-input-placeholder { 
-				line-height: 50px;
-			}
-			&::-webkit-input-placeholder {
-				line-height: 50px;
+			&.error {
+				border: 1px solid @red;
+				
+				&:-moz-placeholder {
+					color: @red !important;
+					opacity: 0.7;
+				}
+				&::-moz-placeholder { 
+					color: @red !important;
+					opacity: 0.7;
+				}
+				&:-ms-input-placeholder { 
+					color: @red !important;
+					opacity: 0.7;
+				}
+				&::-webkit-input-placeholder {
+					color: @red !important;
+					opacity: 0.7;
+				}
 			}
 		}
 		
@@ -731,6 +777,29 @@
 				}
 			}
 		}
+		
+		&__time-popup {
+			
+			.select-label {
+				display: block;
+				font-size: 16px;
+				font-weight: 400;
+				color: #fff;
+				
+				margin-bottom: 15px;
+			}
+			
+			.selects-row {
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: flex-start;
+			}
+			
+			.select-wrapper {
+				width: 100%;
+				margin-bottom: 15px;
+			}
+		}
 	}
 }
 
@@ -871,6 +940,14 @@
 				}
 			}
 		}
+		
+		&__time-popup {
+			width: 670px;
+			
+			.select-wrapper {
+				width: 32%;
+			}
+		}
 	}
 }
 
@@ -963,6 +1040,14 @@
 				.price-block {
 					width: 350px;
 				}
+			}
+		}
+		
+		&__time-popup {
+			width: 765px;
+			
+			.select-wrapper {
+				width: 32%;
 			}
 		}
 	}

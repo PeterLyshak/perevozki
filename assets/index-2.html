@@ -442,11 +442,11 @@
 		</div>
 	</div>
 	
-	<div class="calculation">
+	<div class="calculation" id="calculation">
 		<div class="calculation__wrapper">
 			<h2 class="text-uppercase"><span class="accent">Посчитайте</span> на калькуляторе <span class="accent">стоимость перевозки</span></h2>
 			
-			<div class="calculation__form">
+			<div class="calculation__form" id="calc-form">
 				<div class="calculation__form-block route-block">
 					<label class="calculation__label m-b">Маршрут:</label>
 					
@@ -468,13 +468,13 @@
 					
 					<div class="select-wrapper">
 						<select id="select-rent-time" class="nice-select">
-							<option value="30min">30 минут</option>
-							<option value="1h">1 час</option>
-							<option value="2h">2 часа</option>
-							<option value="3h">3 часа</option>
-							<option value="4h">4 часа</option>
-							<option value="5h">5 часов</option>
-							<option value="+5h">+ 5 часов</option>
+							<option value="1">30 минут</option>
+							<option value="1">1 час</option>
+							<option value="2">2 часа</option>
+							<option value="3">3 часа</option>
+							<option value="4">4 часа</option>
+							<option value="5">5 часов</option>
+							<option value="5">+ 5 часов</option>
 						</select>
 					</div>
 				</div>
@@ -489,23 +489,23 @@
 						<div class="transport-sel-top">
 							<div class="label">Грузоподъемность</div>
 							
-							<div class="transport-sel-tabs">
-								<button type="button" class="tab active">1 т</button>
-								<button type="button" class="tab">1,5 т</button>
-								<button type="button" class="tab">3 т</button>
-								<button type="button" class="tab">5 т</button>
-								<button type="button" class="tab">10 т</button>
+							<div class="transport-sel-tabs" id="calc-transport-sel-tabs">
+								<button type="button" data-target="#1-tonna" class="tab active">1 т</button>
+								<button type="button" data-target="#1-5-tonna" class="tab">1,5 т</button>
+								<button type="button" data-target="#3-tonna" class="tab">3 т</button>
+								<button type="button" data-target="#5-tonna" class="tab">5 т</button>
+								<button type="button" data-target="#10-tonna" class="tab">10 т</button>
 							</div>
 						</div>
 						
-						<div class="transport-sel-items-wrapper">
+						<div class="transport-sel-items-wrapper" id="calc-transport-items">
 							<div class="main-item active" id="1-tonna">
 								<div class="transport-sel-slider">
-									<div class="item">
+									<div class="item" data-price="500">
 										<div class="inner">
 											<div class="left">
 												<div class="name">
-													<span>ГАЗ 2310 фургон</span>
+													<span class="car-name">ГАЗ 33023 фургон</span>
 													
 													<span class="tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
 												</div>
@@ -550,11 +550,11 @@
 										</div>
 									</div>
 									
-									<div class="item">
+									<div class="item" data-price="700">
 										<div class="inner">
 											<div class="left">
 												<div class="name">
-													<span>Citreon Berlingo</span>
+													<span class="car-name">Citroen Berlingo</span>
 													
 													<span class="tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
 												</div>
@@ -585,7 +585,7 @@
 													
 													<li>
 														<span>Объем кузова</span>
-														<span>11 куб. м</span>
+														<span>12 куб. м</span>
 													</li>
 													
 													<li>
@@ -594,10 +594,354 @@
 													</li>
 												</ul>
 												
-												<div class="price">Цена:  500 р./час</div>
+												<div class="price">Цена: 700 р./час</div>
 											</div>
 										</div>
 									</div>
+									
+									<div class="item" data-price="700">
+										<div class="inner">
+											<div class="left">
+												<div class="name">
+													<span class="car-name">Citroen Jumper</span>
+													
+													<span class="tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
+												</div>
+												
+												<div class="img-wrapper">
+													<img src="img/vehicles/jumper.png" alt="">
+												</div>
+											</div>
+											
+											<div class="right">
+												<div class="top-label">Габариты кузова:</div>
+												
+												<ul>
+													<li>
+														<span>Длина</span>
+														<span>3 м</span>
+													</li>
+													
+													<li>
+														<span>Высота</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Ширина</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Объем кузова</span>
+														<span>12 куб. м</span>
+													</li>
+													
+													<li>
+														<span>Грузоподъемность</span>
+														<span>1 т</span>
+													</li>
+												</ul>
+												
+												<div class="price">Цена: 700 р./час</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="item" data-price="900">
+										<div class="inner">
+											<div class="left">
+												<div class="name">
+													<span class="car-name">Hyundai Porter</span>
+													
+													<span class="tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
+												</div>
+												
+												<div class="img-wrapper">
+													<img src="img/vehicles/porter.png" alt="">
+												</div>
+											</div>
+											
+											<div class="right">
+												<div class="top-label">Габариты кузова:</div>
+												
+												<ul>
+													<li>
+														<span>Длина</span>
+														<span>3 м</span>
+													</li>
+													
+													<li>
+														<span>Высота</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Ширина</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Объем кузова</span>
+														<span>12 куб. м</span>
+													</li>
+													
+													<li>
+														<span>Грузоподъемность</span>
+														<span>1 т</span>
+													</li>
+												</ul>
+												
+												<div class="price">Цена: 900 р./час</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="item" data-price="1200">
+										<div class="inner">
+											<div class="left">
+												<div class="name">
+													<span class="car-name">Газель удлиненная</span>
+													
+													<span class="tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
+												</div>
+												
+												<div class="img-wrapper">
+													<img src="img/vehicles/gazel.png" alt="">
+												</div>
+											</div>
+											
+											<div class="right">
+												<div class="top-label">Габариты кузова:</div>
+												
+												<ul>
+													<li>
+														<span>Длина</span>
+														<span>3 м</span>
+													</li>
+													
+													<li>
+														<span>Высота</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Ширина</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Объем кузова</span>
+														<span>12 куб. м</span>
+													</li>
+													
+													<li>
+														<span>Грузоподъемность</span>
+														<span>1.5 т</span>
+													</li>
+												</ul>
+												
+												<div class="price">Цена: 1200 р./час</div>
+											</div>
+										</div>
+									</div>
+								
+									<div class="item" data-price="1500">
+										<div class="inner">
+											<div class="left">
+												<div class="name">
+													<span class="car-name">Mercedes-Benz Sprinter </span>
+													
+													<span class="tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
+												</div>
+												
+												<div class="img-wrapper">
+													<img src="img/vehicles/mercedes.png" alt="">
+												</div>
+											</div>
+											
+											<div class="right">
+												<div class="top-label">Габариты кузова:</div>
+												
+												<ul>
+													<li>
+														<span>Длина</span>
+														<span>3 м</span>
+													</li>
+													
+													<li>
+														<span>Высота</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Ширина</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Объем кузова</span>
+														<span>12 куб. м</span>
+													</li>
+													
+													<li>
+														<span>Грузоподъемность</span>
+														<span>1.5 т</span>
+													</li>
+												</ul>
+												
+												<div class="price">Цена: 1500 р./час</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="item" data-price="2000">
+										<div class="inner">
+											<div class="left">
+												<div class="name">
+													<span class="car-name">Зил Бычок фургон </span>
+													
+													<span class="tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
+												</div>
+												
+												<div class="img-wrapper">
+													<img src="img/vehicles/bichok.png" alt="">
+												</div>
+											</div>
+											
+											<div class="right">
+												<div class="top-label">Габариты кузова:</div>
+												
+												<ul>
+													<li>
+														<span>Длина</span>
+														<span>3 м</span>
+													</li>
+													
+													<li>
+														<span>Высота</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Ширина</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Объем кузова</span>
+														<span>12 куб. м</span>
+													</li>
+													
+													<li>
+														<span>Грузоподъемность</span>
+														<span>3 т</span>
+													</li>
+												</ul>
+												
+												<div class="price">Цена: 2000 р./час</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="item" data-price="2000">
+										<div class="inner">
+											<div class="left">
+												<div class="name">
+													<span class="car-name">Mercedes Atego</span>
+													
+													<span class="tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
+												</div>
+												
+												<div class="img-wrapper">
+													<img src="img/vehicles/atego.png" alt="">
+												</div>
+											</div>
+											
+											<div class="right">
+												<div class="top-label">Габариты кузова:</div>
+												
+												<ul>
+													<li>
+														<span>Длина</span>
+														<span>3 м</span>
+													</li>
+													
+													<li>
+														<span>Высота</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Ширина</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Объем кузова</span>
+														<span>12 куб. м</span>
+													</li>
+													
+													<li>
+														<span>Грузоподъемность</span>
+														<span>5 т</span>
+													</li>
+												</ul>
+												
+												<div class="price">Цена: 2000 р./час</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="item" data-price="3000">
+										<div class="inner">
+											<div class="left">
+												<div class="name">
+													<span class="car-name">Iveco Еврокарго</span>
+													
+													<span class="tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
+												</div>
+												
+												<div class="img-wrapper">
+													<img src="img/vehicles/iveco.png" alt="">
+												</div>
+											</div>
+											
+											<div class="right">
+												<div class="top-label">Габариты кузова:</div>
+												
+												<ul>
+													<li>
+														<span>Длина</span>
+														<span>3 м</span>
+													</li>
+													
+													<li>
+														<span>Высота</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Ширина</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Объем кузова</span>
+														<span>12 куб. м</span>
+													</li>
+													
+													<li>
+														<span>Грузоподъемность</span>
+														<span>10 т</span>
+													</li>
+												</ul>
+												
+												<div class="price">Цена: 3000 р./час</div>
+											</div>
+										</div>
+									</div>
+								
 								</div>
 								
 								<div class="item-bottom-controls">
@@ -608,6 +952,652 @@
 									<a href="javascript:;" class="not-link-mixin transport-sel-arrow next"><i class="icon-chevron"></i></a>
 								</div>
 							</div>
+							
+							<div class="main-item" id="1-5-tonna">
+								<div class="transport-sel-slider">
+									<div class="item" data-price="500">
+										<div class="inner">
+											<div class="left">
+												<div class="name">
+													<span class="car-name">ГАЗ 33023 фургон</span>
+													
+													<span class="tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
+												</div>
+												
+												<div class="img-wrapper">
+													<img src="img/vehicles/gaz.png" alt="">
+												</div>
+											</div>
+											
+											<div class="right">
+												<div class="top-label">Габариты кузова:</div>
+												
+												<ul>
+													<li>
+														<span>Длина</span>
+														<span>3 м</span>
+													</li>
+													
+													<li>
+														<span>Высота</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Ширина</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Объем кузова</span>
+														<span>12 куб. м</span>
+													</li>
+													
+													<li>
+														<span>Грузоподъемность</span>
+														<span>1.5 т</span>
+													</li>
+												</ul>
+												
+												<div class="price">Цена:  500 р./час</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="item" data-price="1200">
+										<div class="inner">
+											<div class="left">
+												<div class="name">
+													<span class="car-name">Газель удлиненная</span>
+													
+													<span class="tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
+												</div>
+												
+												<div class="img-wrapper">
+													<img src="img/vehicles/gazel.png" alt="">
+												</div>
+											</div>
+											
+											<div class="right">
+												<div class="top-label">Габариты кузова:</div>
+												
+												<ul>
+													<li>
+														<span>Длина</span>
+														<span>3 м</span>
+													</li>
+													
+													<li>
+														<span>Высота</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Ширина</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Объем кузова</span>
+														<span>12 куб. м</span>
+													</li>
+													
+													<li>
+														<span>Грузоподъемность</span>
+														<span>1.5 т</span>
+													</li>
+												</ul>
+												
+												<div class="price">Цена: 1200 р./час</div>
+											</div>
+										</div>
+									</div>
+								
+									<div class="item" data-price="1500">
+										<div class="inner">
+											<div class="left">
+												<div class="name">
+													<span class="car-name">Mercedes-Benz Sprinter </span>
+													
+													<span class="tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
+												</div>
+												
+												<div class="img-wrapper">
+													<img src="img/vehicles/mercedes.png" alt="">
+												</div>
+											</div>
+											
+											<div class="right">
+												<div class="top-label">Габариты кузова:</div>
+												
+												<ul>
+													<li>
+														<span>Длина</span>
+														<span>3 м</span>
+													</li>
+													
+													<li>
+														<span>Высота</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Ширина</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Объем кузова</span>
+														<span>12 куб. м</span>
+													</li>
+													
+													<li>
+														<span>Грузоподъемность</span>
+														<span>1.5 т</span>
+													</li>
+												</ul>
+												
+												<div class="price">Цена: 1500 р./час</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="item" data-price="2000">
+										<div class="inner">
+											<div class="left">
+												<div class="name">
+													<span class="car-name">Зил Бычок фургон </span>
+													
+													<span class="tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
+												</div>
+												
+												<div class="img-wrapper">
+													<img src="img/vehicles/bichok.png" alt="">
+												</div>
+											</div>
+											
+											<div class="right">
+												<div class="top-label">Габариты кузова:</div>
+												
+												<ul>
+													<li>
+														<span>Длина</span>
+														<span>3 м</span>
+													</li>
+													
+													<li>
+														<span>Высота</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Ширина</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Объем кузова</span>
+														<span>12 куб. м</span>
+													</li>
+													
+													<li>
+														<span>Грузоподъемность</span>
+														<span>3 т</span>
+													</li>
+												</ul>
+												
+												<div class="price">Цена: 2000 р./час</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="item" data-price="2000">
+										<div class="inner">
+											<div class="left">
+												<div class="name">
+													<span class="car-name">Mercedes Atego</span>
+													
+													<span class="tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
+												</div>
+												
+												<div class="img-wrapper">
+													<img src="img/vehicles/atego.png" alt="">
+												</div>
+											</div>
+											
+											<div class="right">
+												<div class="top-label">Габариты кузова:</div>
+												
+												<ul>
+													<li>
+														<span>Длина</span>
+														<span>3 м</span>
+													</li>
+													
+													<li>
+														<span>Высота</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Ширина</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Объем кузова</span>
+														<span>12 куб. м</span>
+													</li>
+													
+													<li>
+														<span>Грузоподъемность</span>
+														<span>5 т</span>
+													</li>
+												</ul>
+												
+												<div class="price">Цена: 2000 р./час</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="item" data-price="3000">
+										<div class="inner">
+											<div class="left">
+												<div class="name">
+													<span class="car-name">Iveco Еврокарго</span>
+													
+													<span class="tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
+												</div>
+												
+												<div class="img-wrapper">
+													<img src="img/vehicles/iveco.png" alt="">
+												</div>
+											</div>
+											
+											<div class="right">
+												<div class="top-label">Габариты кузова:</div>
+												
+												<ul>
+													<li>
+														<span>Длина</span>
+														<span>3 м</span>
+													</li>
+													
+													<li>
+														<span>Высота</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Ширина</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Объем кузова</span>
+														<span>12 куб. м</span>
+													</li>
+													
+													<li>
+														<span>Грузоподъемность</span>
+														<span>10 т</span>
+													</li>
+												</ul>
+												
+												<div class="price">Цена: 3000 р./час</div>
+											</div>
+										</div>
+									</div>
+								
+								</div>
+								
+								<div class="item-bottom-controls">
+									<a href="javascript:;" class="not-link-mixin transport-sel-arrow prev"><i class="icon-chevron"></i></a>
+								
+									<div class="slick-dots-wrap"></div>
+									
+									<a href="javascript:;" class="not-link-mixin transport-sel-arrow next"><i class="icon-chevron"></i></a>
+								</div>
+							</div>
+							
+							<div class="main-item" id="3-tonna">
+								<div class="transport-sel-slider">
+									
+									<div class="item" data-price="2000">
+										<div class="inner">
+											<div class="left">
+												<div class="name">
+													<span class="car-name">Зил Бычок фургон </span>
+													
+													<span class="tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
+												</div>
+												
+												<div class="img-wrapper">
+													<img src="img/vehicles/bichok.png" alt="">
+												</div>
+											</div>
+											
+											<div class="right">
+												<div class="top-label">Габариты кузова:</div>
+												
+												<ul>
+													<li>
+														<span>Длина</span>
+														<span>3 м</span>
+													</li>
+													
+													<li>
+														<span>Высота</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Ширина</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Объем кузова</span>
+														<span>12 куб. м</span>
+													</li>
+													
+													<li>
+														<span>Грузоподъемность</span>
+														<span>3 т</span>
+													</li>
+												</ul>
+												
+												<div class="price">Цена: 2000 р./час</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="item" data-price="2000">
+										<div class="inner">
+											<div class="left">
+												<div class="name">
+													<span class="car-name">Mercedes Atego</span>
+													
+													<span class="tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
+												</div>
+												
+												<div class="img-wrapper">
+													<img src="img/vehicles/atego.png" alt="">
+												</div>
+											</div>
+											
+											<div class="right">
+												<div class="top-label">Габариты кузова:</div>
+												
+												<ul>
+													<li>
+														<span>Длина</span>
+														<span>3 м</span>
+													</li>
+													
+													<li>
+														<span>Высота</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Ширина</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Объем кузова</span>
+														<span>12 куб. м</span>
+													</li>
+													
+													<li>
+														<span>Грузоподъемность</span>
+														<span>5 т</span>
+													</li>
+												</ul>
+												
+												<div class="price">Цена: 2000 р./час</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="item" data-price="3000">
+										<div class="inner">
+											<div class="left">
+												<div class="name">
+													<span class="car-name">Iveco Еврокарго</span>
+													
+													<span class="tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
+												</div>
+												
+												<div class="img-wrapper">
+													<img src="img/vehicles/iveco.png" alt="">
+												</div>
+											</div>
+											
+											<div class="right">
+												<div class="top-label">Габариты кузова:</div>
+												
+												<ul>
+													<li>
+														<span>Длина</span>
+														<span>3 м</span>
+													</li>
+													
+													<li>
+														<span>Высота</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Ширина</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Объем кузова</span>
+														<span>12 куб. м</span>
+													</li>
+													
+													<li>
+														<span>Грузоподъемность</span>
+														<span>10 т</span>
+													</li>
+												</ul>
+												
+												<div class="price">Цена: 3000 р./час</div>
+											</div>
+										</div>
+									</div>
+								
+								</div>
+								
+								<div class="item-bottom-controls">
+									<a href="javascript:;" class="not-link-mixin transport-sel-arrow prev"><i class="icon-chevron"></i></a>
+								
+									<div class="slick-dots-wrap"></div>
+									
+									<a href="javascript:;" class="not-link-mixin transport-sel-arrow next"><i class="icon-chevron"></i></a>
+								</div>
+							</div>
+							
+							<div class="main-item" id="5-tonna">
+								<div class="transport-sel-slider">
+									
+									<div class="item" data-price="2000">
+										<div class="inner">
+											<div class="left">
+												<div class="name">
+													<span class="car-name">Mercedes Atego</span>
+													
+													<span class="tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
+												</div>
+												
+												<div class="img-wrapper">
+													<img src="img/vehicles/atego.png" alt="">
+												</div>
+											</div>
+											
+											<div class="right">
+												<div class="top-label">Габариты кузова:</div>
+												
+												<ul>
+													<li>
+														<span>Длина</span>
+														<span>3 м</span>
+													</li>
+													
+													<li>
+														<span>Высота</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Ширина</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Объем кузова</span>
+														<span>12 куб. м</span>
+													</li>
+													
+													<li>
+														<span>Грузоподъемность</span>
+														<span>5 т</span>
+													</li>
+												</ul>
+												
+												<div class="price">Цена: 2000 р./час</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="item" data-price="3000">
+										<div class="inner">
+											<div class="left">
+												<div class="name">
+													<span class="car-name">Iveco Еврокарго</span>
+													
+													<span class="tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
+												</div>
+												
+												<div class="img-wrapper">
+													<img src="img/vehicles/iveco.png" alt="">
+												</div>
+											</div>
+											
+											<div class="right">
+												<div class="top-label">Габариты кузова:</div>
+												
+												<ul>
+													<li>
+														<span>Длина</span>
+														<span>3 м</span>
+													</li>
+													
+													<li>
+														<span>Высота</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Ширина</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Объем кузова</span>
+														<span>12 куб. м</span>
+													</li>
+													
+													<li>
+														<span>Грузоподъемность</span>
+														<span>10 т</span>
+													</li>
+												</ul>
+												
+												<div class="price">Цена: 3000 р./час</div>
+											</div>
+										</div>
+									</div>
+								
+								</div>
+								
+								<div class="item-bottom-controls">
+									<a href="javascript:;" class="not-link-mixin transport-sel-arrow prev"><i class="icon-chevron"></i></a>
+								
+									<div class="slick-dots-wrap"></div>
+									
+									<a href="javascript:;" class="not-link-mixin transport-sel-arrow next"><i class="icon-chevron"></i></a>
+								</div>
+							</div>
+							
+							<div class="main-item" id="10-tonna">
+								<div class="transport-sel-slider">
+									
+									<div class="item" data-price="3000">
+										<div class="inner">
+											<div class="left">
+												<div class="name">
+													<span class="car-name">Iveco Еврокарго</span>
+													
+													<span class="tooltip" title="Краткая информация буквально на 20-30 слов, точно не более. Чтобы заполнить все 30 слов придется написать еще что-то. Еще 2 слова">?</span>
+												</div>
+												
+												<div class="img-wrapper">
+													<img src="img/vehicles/iveco.png" alt="">
+												</div>
+											</div>
+											
+											<div class="right">
+												<div class="top-label">Габариты кузова:</div>
+												
+												<ul>
+													<li>
+														<span>Длина</span>
+														<span>3 м</span>
+													</li>
+													
+													<li>
+														<span>Высота</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Ширина</span>
+														<span>2 м</span>
+													</li>
+													
+													<li>
+														<span>Объем кузова</span>
+														<span>12 куб. м</span>
+													</li>
+													
+													<li>
+														<span>Грузоподъемность</span>
+														<span>10 т</span>
+													</li>
+												</ul>
+												
+												<div class="price">Цена: 3000 р./час</div>
+											</div>
+										</div>
+									</div>
+								
+								</div>
+								
+<!--
+								<div class="item-bottom-controls">
+									<a href="javascript:;" class="not-link-mixin transport-sel-arrow prev"><i class="icon-chevron"></i></a>
+								
+									<div class="slick-dots-wrap"></div>
+									
+									<a href="javascript:;" class="not-link-mixin transport-sel-arrow next"><i class="icon-chevron"></i></a>
+								</div>
+-->
+							</div>
+							
 						</div>
 					</div>
 				</div>
@@ -635,9 +1625,9 @@
 					</div>
 				</div>
 				
-				<a href="javascript:;" data-toggle="modal" data-target="#" class="brand-link calculation__time-popup-toggle">Время подачи</a>
+				<a href="javascript:;" data-toggle="modal" data-target="#calc-time-popup" class="brand-link calculation__time-popup-toggle">Время подачи</a>
 				
-				<button data-toggle="modal" data-target="#" class="btn submit-button">Рассчитать</button>
+				<button id="calc-submit" data-target="#calculation-popup" class="btn submit-button">Рассчитать</button>
 			</div>
 		</div>
 	</div>
@@ -1785,6 +2775,170 @@
 			</div>
 		</div>
 	</div>
+	
+	<div class="popup-block" id="calc-time-popup">
+		<div class="popup-block__overlay">
+			<div class="popup-block__popup calculation__time-popup">
+				<div class="inner-content">
+					<a href="javascript:;" class="popup-block__close"></a>
+					
+					<div class="selects-row">
+						<div class="select-label">День</div>
+						
+						<div class="select-wrapper">
+							<select id="calc-time-day" class="nice-select">
+								<option value="0" selected>Не выбрано</option>
+								<option value="Сегодня">Сегодня</option>
+								<option value="Завтра">Завтра</option>
+								<option value="Другое">Другое</option>
+							</select>
+						</div>
+						
+						<div class="select-label">Время</div>
+						
+						<div class="select-wrapper">
+							<select id="calc-time-hour" class="nice-select">
+								<option value="0" selected>0</option>
+								<option value="01">01</option>
+								<option value="02">02</option>
+								<option value="03">03</option>
+								<option value="04">04</option>
+								<option value="05">05</option>
+								<option value="06">06</option>
+								<option value="07">07</option>
+								<option value="08">08</option>
+								<option value="09">09</option>
+								<option value="09">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+								<option value="13">13</option>
+								<option value="14">14</option>
+								<option value="15">15</option>
+								<option value="16">16</option>
+								<option value="17">17</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+								<option value="20">20</option>
+								<option value="21">21</option>
+								<option value="22">22</option>
+								<option value="13">23</option>
+								<option value="24">24</option>
+							</select>
+						</div>
+						
+						<div class="select-wrapper">
+							<select id="calc-time-min" class="nice-select">
+								<option value="0" selected>0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+								<option value="13">13</option>
+								<option value="14">14</option>
+								<option value="15">15</option>
+								<option value="16">16</option>
+								<option value="17">17</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+								<option value="20">20</option>
+								<option value="21">21</option>
+								<option value="22">22</option>
+								<option value="23">23</option>
+								<option value="24">24</option>
+								<option value="25">25</option>
+								<option value="26">26</option>
+								<option value="27">27</option>
+								<option value="28">28</option>
+								<option value="29">29</option>
+								<option value="30">30</option>
+								<option value="31">31</option>
+								<option value="32">32</option>
+								<option value="33">33</option>
+								<option value="34">34</option>
+								<option value="35">35</option>
+								<option value="36">36</option>
+								<option value="37">37</option>
+								<option value="38">38</option>
+								<option value="39">39</option>
+								<option value="40">40</option>
+								<option value="41">41</option>
+								<option value="42">42</option>
+								<option value="43">43</option>
+								<option value="44">44</option>
+								<option value="45">45</option>
+								<option value="46">46</option>
+								<option value="47">47</option>
+								<option value="48">48</option>
+								<option value="49">49</option>
+								<option value="50">50</option>
+								<option value="51">51</option>
+								<option value="52">52</option>
+								<option value="53">53</option>
+								<option value="54">54</option>
+								<option value="55">55</option>
+								<option value="56">56</option>
+								<option value="57">57</option>
+								<option value="58">58</option>
+								<option value="59">59</option>
+								<option value="60">60</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="popup-block" id="calculation-popup">
+		<div class="popup-block__overlay">
+			<div class="popup-block__popup calculation__popup">
+				<div class="inner-content">
+					<a href="javascript:;" class="popup-block__close"></a>
+					
+					<div class="top-heading">Вы выбрали:</div>
+					
+					<div class="route-text">
+						<b>Маршрут:</b><br>
+						<span id="calc-route">-</span>
+					</div>
+					
+					<div class="calc-row">
+						<ul class="calc-col">
+							<li><b>Время аренды:</b> <span id="calc-rent-time"></span></li>
+							<li><b>Транспорт:</b> <span id="calc-transport"></span></li>
+						</ul>
+						
+						<ul class="calc-col">
+							<li><b>Время подачи:</b> <span id="calc-arrive-time"></span></li>
+							<li><b>Грузчики:</b> <span id="calc-curiers"></span></li>
+						</ul>
+					</div>
+					
+					<div class="bottom-content">
+						<div class="price-block">
+							<div class="left-ico"><img src="img/icons/calc-price-ico.png" alt=""></div>
+							
+							<div class="right-text">
+								<div class="label">Стоимость составляет</div>
+								<span class="result-price" id="result-price">1 500 руб.</span>
+							</div>
+						</div>
+						
+						<button type="submit" class="btn submit-button">Заказать</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 	
 	<script src="js/jquery-3.2.1.js"></script>
 	<script src="js/plugins.min.js"></script>
