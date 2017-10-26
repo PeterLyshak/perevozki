@@ -341,7 +341,7 @@
 				
 				.img-wrapper {
 					width: 100%;
-					height: auto;
+					height: 230px;
 					
 					max-width: 375px;
 					
@@ -349,10 +349,13 @@
 					
 					img {
 						display: block;
-						height: auto;
+						height: 100%;
 						width: 100%;
 						
 						z-index: 2;
+						
+						object-fit: cover;
+						object-position: 50% 0;
 					}
 					
 					&:after {

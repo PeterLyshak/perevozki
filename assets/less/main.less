@@ -66,3 +66,15 @@ body {
 	overflow-x: hidden;
 }
 
+body.modal-opened,
+html.modal-opened {
+	overflow: hidden !important;
+	
+	> *:not(body):not(.popup-block) {
+		filter: blur(10px);
+	}
+}
+
+body.iosBugFixCaret.modal-opened {
+	position: fixed;
+}

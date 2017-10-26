@@ -1,4 +1,16 @@
-	
+// Detect ios 11_0_x affected 
+// NEED TO BE UPDATED if new versions are affected
+var ua = navigator.userAgent,
+	iOS = /iPad|iPhone|iPod/.test(ua),
+	iOS11 = /OS 11_0_1|OS 11_0_2|OS 11_0_3/.test(ua);
+
+// ios 11 bug caret position
+if ( iOS && iOS11 ) {
+
+	// Add CSS class to body
+	$("body").addClass("iosBugFixCaret");
+}
+
 $('.tooltip').tooltipster({
 	position: 'top',
 	trigger:"custom",
@@ -365,6 +377,8 @@ $('.tariffs__tab').click(function(e) {
 		thisLeftBG = $(this).attr('data-left-bg');
 	
 	$(this).addClass('active').siblings().removeClass('active');
+	$('.tariffs__tab').removeClass('mobile-active');
+	
 	$('#tariffs-left').removeClass('opened-curiers opened-vehicle').addClass(thisLeftBG);
 	
 	
@@ -393,14 +407,16 @@ $('.tariffs__close-btn').click(function(e) {
 // MODAL SCRIPT
 
 function openModal(hrefModal) {
-	$('body, html').css('overflow', 'hidden');
+//	$('body, html').css('overflow', 'hidden');
 	
+	$('body, html').addClass('modal-opened');
 	$(hrefModal).fadeIn(300);
 }
 
 function closeModals() {
-	$('body, html').css('overflow', '');
+//	$('body, html').css('overflow', '');
 	
+	$('body, html').removeClass('modal-opened');
 	$('.popup-block:not(:hidden)').fadeOut(300);
 }
 
@@ -428,7 +444,7 @@ $(document).off('click', '.popup-block__overlay').on('click', '.popup-block__ove
 	}
 });
 
-$(document).off('click', '.popup-block__close').on('click', '.popup-block__close', function(e) {
+$(document).off('click', '.popup-block__close, .popup-block__close-btn').on('click', '.popup-block__close, .popup-block__close-btn', function(e) {
 	e.preventDefault();
 	
 	closeModals();
@@ -476,6 +492,24 @@ $(".promotions-ajax-form").submit(function () {
 	$.ajax({
 		type: "POST",
 		url: 'mail-promotions.php',
+		data: formNm.serialize(),
+		success: function (data) {
+			showThanksModal();
+			formNm[0].reset();
+		},
+		error: function (jqXHR, text, error) {
+			// Вывод текста ошибки отправки
+			$(formNm).html(error);  
+		}
+	});
+	return false;
+});
+
+$(".calc-ajax-form").submit(function () {
+	var formNm = $(this);
+	$.ajax({
+		type: "POST",
+		url: 'mail-calculation.php',
 		data: formNm.serialize(),
 		success: function (data) {
 			showThanksModal();
@@ -599,26 +633,32 @@ $('#calc-submit').click(function(e) {
 	} 
 	
 	$('#calc-route').text(routeFromVal + ' - ' + routeToVal);
+	$('#calc-form-address-value').val(routeFromVal + ' - ' + routeToVal);
 	
 	// Выбор времени аренды
 	
 	$('#calc-rent-time').text(choosenRentTime);
+	$('#calc-form-time-rent').val(choosenRentTime);
 	
 	// Выбор машины
 	
 	$('#calc-transport').text($(choosenTransport).find('.car-name').text());
+	$('#calc-form-transport-name').val($(choosenTransport).find('.car-name').text());
 	
 	// Время подачи
 	
 	if (choosenTimeDay != '0') {
 		$('#calc-arrive-time').text(choosenTimeDay + ' в ' + choosenTimeHour + ':' + choosenTimeMinute);
+		$('#calc-form-time-arrive').val(choosenTimeDay + ' в ' + choosenTimeHour + ':' + choosenTimeMinute);
 	} else {
 		$('#calc-arrive-time').text('Не выбрано');
+		$('#calc-form-time-arrive').val('Не выбрано');
 	}
 	
 	// Грузчики
 	
 	$('#calc-curiers').text(choosenCuriersCount);
+	$('#calc-form-curiers-count').val(choosenCuriersCount);
 	
 	// Расчет стоимости
 	
@@ -626,13 +666,20 @@ $('#calc-submit').click(function(e) {
 	
 	var transportResultPrice = choosenTransportPrice * parseInt(choosenRentTimeVal);
 	
-	$('#result-price').text(curiersResultPrice + transportResultPrice + ' руб.');
+	$('#result-price, #calc-form-result-price').text(curiersResultPrice + transportResultPrice + ' руб.');
+	$('#calc-form-result-price').val(curiersResultPrice + transportResultPrice + ' руб.');
 	
 	openModal(hrefModal);
 });
 
 
-
+$('.calculation__popup-submit-btn').click(function(e) {
+	e.preventDefault();
+	
+	$('#calculation-popup').fadeOut(300);
+	
+	$('#order-calc-popup').fadeIn(300);
+});
 
 
 
