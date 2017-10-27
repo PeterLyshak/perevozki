@@ -25,6 +25,7 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
 			baseDir: 'assets' // Директория для сервера - assets
 		},
 		notify: false, // Отключаем уведомления
+		tunnel: true
 	});
 });
 

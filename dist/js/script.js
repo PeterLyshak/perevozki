@@ -1,15 +1,4 @@
-// Detect ios 11_0_x affected 
-// NEED TO BE UPDATED if new versions are affected
-var ua = navigator.userAgent,
-	iOS = /iPad|iPhone|iPod/.test(ua),
-	iOS11 = /OS 11_0_1|OS 11_0_2|OS 11_0_3/.test(ua);
 
-// ios 11 bug caret position
-if ( iOS && iOS11 ) {
-
-	// Add CSS class to body
-	$("body").addClass("iosBugFixCaret");
-}
 
 $('.tooltip').tooltipster({
 	position: 'top',
@@ -328,7 +317,7 @@ $('#team-slider').slick({
 	dots: true,
 	appendDots: $('#team-dots'),
 	infinite: true,
-	adaptiveHeight: true,
+	adaptiveHeight: false,
 	autoplay: true,
 	autoplaySpeed: teamSliderAutoPlaySpeed
 });
