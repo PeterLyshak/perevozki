@@ -1,4 +1,22 @@
+// Detect ios 11_0_x affected 
+// NEED TO BE UPDATED if new versions are affected
+var ua = navigator.userAgent,
+iOS = /iPad|iPhone|iPod/.test(ua),
+iOS11 = /OS 11_0_1|OS 11_0_2|OS 11_0_3/.test(ua);
 
+// ios 11 bug caret position
+if ( iOS && iOS11 ) {
+	// Add CSS class to body
+	$("body").addClass("iosBugFixCaret");
+}
+
+if(/Android/.test(navigator.appVersion)) {
+	window.addEventListener("resize", function() {
+		if(document.activeElement.tagName=="INPUT" || document.activeElement.tagName=="TEXTAREA") {
+			document.activeElement.scrollIntoView();
+		}
+	})
+} 
 
 $('.tooltip').tooltipster({
 	position: 'top',
@@ -50,8 +68,14 @@ $('#reliably').waypoint(function() {
 	offset: '200px'
 });
 
-$("[type = tel]").mask("+7 (999) 999 – 99 – 99");
 
+$(document).ready(function() {
+	$("[type = tel]").inputmask({
+		mask: "+7 (999) 999 – 99 – 99"
+	});
+});
+
+				  
 $('.services__item .toggle-btn').click(function(e) {
 	e.preventDefault();
 	
@@ -394,9 +418,14 @@ $('.tariffs__close-btn').click(function(e) {
 });
 
 // MODAL SCRIPT
+var scrolledPositionBeforeOpenModal;
 
 function openModal(hrefModal) {
 //	$('body, html').css('overflow', 'hidden');
+	
+	if ( iOS && iOS11 ) {
+		scrolledPositionBeforeOpenModal = $(document).scrollTop();
+	}
 	
 	$('body, html').addClass('modal-opened');
 	$(hrefModal).fadeIn(300);
@@ -406,7 +435,15 @@ function closeModals() {
 //	$('body, html').css('overflow', '');
 	
 	$('body, html').removeClass('modal-opened');
+	
+	if ( iOS && iOS11 ) {
+		$('html, body').animate({
+			scrollTop: scrolledPositionBeforeOpenModal
+		}, 0);
+	}
+	
 	$('.popup-block:not(:hidden)').fadeOut(300);
+	
 }
 
 function showThanksModal() {
@@ -442,6 +479,24 @@ $(document).off('click', '.popup-block__close, .popup-block__close-btn').on('cli
 
 $(".basic-ajax-form").submit(function () {
 	var formNm = $(this);
+	
+	$(formNm).find('[type="tel"]').removeClass('error');
+	
+	if ($(formNm).find('[type="tel"]').val() != '') {
+		
+		if ($(formNm).find('[type="tel"]').val().indexOf('_') > 0) {
+
+			$(formNm).find('[type="tel"]').addClass('error');
+
+			return false;
+		}
+		
+	} else {
+		$(formNm).find('[type="tel"]').addClass('error');
+		
+		return false;
+	}
+	
 	$.ajax({
 		type: "POST",
 		url: 'mail-basic.php',
@@ -460,6 +515,24 @@ $(".basic-ajax-form").submit(function () {
 
 $(".services-ajax-form").submit(function () {
 	var formNm = $(this);
+	
+	$(formNm).find('[type="tel"]').removeClass('error');
+	
+	if ($(formNm).find('[type="tel"]').val() != '') {
+		
+		if ($(formNm).find('[type="tel"]').val().indexOf('_') > 0) {
+
+			$(formNm).find('[type="tel"]').addClass('error');
+
+			return false;
+		}
+		
+	} else {
+		$(formNm).find('[type="tel"]').addClass('error');
+		
+		return false;
+	}
+	
 	$.ajax({
 		type: "POST",
 		url: 'mail-services.php',
@@ -478,6 +551,24 @@ $(".services-ajax-form").submit(function () {
 
 $(".promotions-ajax-form").submit(function () {
 	var formNm = $(this);
+	
+	$(formNm).find('[type="tel"]').removeClass('error');
+	
+	if ($(formNm).find('[type="tel"]').val() != '') {
+		
+		if ($(formNm).find('[type="tel"]').val().indexOf('_') > 0) {
+
+			$(formNm).find('[type="tel"]').addClass('error');
+
+			return false;
+		}
+		
+	} else {
+		$(formNm).find('[type="tel"]').addClass('error');
+		
+		return false;
+	}
+	
 	$.ajax({
 		type: "POST",
 		url: 'mail-promotions.php',
@@ -496,6 +587,24 @@ $(".promotions-ajax-form").submit(function () {
 
 $(".calc-ajax-form").submit(function () {
 	var formNm = $(this);
+	
+	$(formNm).find('[type="tel"]').removeClass('error');
+	
+	if ($(formNm).find('[type="tel"]').val() != '') {
+		
+		if ($(formNm).find('[type="tel"]').val().indexOf('_') > 0) {
+
+			$(formNm).find('[type="tel"]').addClass('error');
+
+			return false;
+		}
+		
+	} else {
+		$(formNm).find('[type="tel"]').addClass('error');
+		
+		return false;
+	}
+	
 	$.ajax({
 		type: "POST",
 		url: 'mail-calculation.php',
